@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01.Scenes/02.ExternoIF.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/01.Scenes/01.Home.unity
+    guid: 1987e4f6f18f09b49a7b0801e6052253
   m_configObjects: {}
