@@ -13,11 +13,11 @@ public class PlayerController : MonoBehaviour
     private bool isMoving;
     private Vector2 input;
 
-    private Animator animator;
+    private CharacterAnimator animator;
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponent<CharacterAnimator>();
     }
 
     // Update is called once per frame
@@ -32,8 +32,8 @@ public class PlayerController : MonoBehaviour
 
             if (input != Vector2.zero)
             {
-                animator.SetFloat("moveX", input.x);
-                animator.SetFloat("moveY", input.y);
+                animator.MoveX = input.x;
+                animator.MoveY = input.y;
 
                 var targetPos = transform.position;
                 targetPos.x += input.x;
@@ -45,15 +45,15 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        animator.SetBool("isMoving", isMoving);
-
+        animator.IsMoving = isMoving;
+            
         if (Input.GetKeyDown(KeyCode.Z))
             Interact();
     }
 
     void Interact()
     {
-        var facingDirection = new Vector3(animator.GetFloat("moveX"), animator.GetFloat("moveY"));
+        var facingDirection = new Vector3(animator.MoveX, animator.MoveY);
         var interactPos = transform.position + facingDirection;
 
         var collider = Physics2D.OverlapCircle(interactPos, 0.3f, interactableObjectsLayer);
