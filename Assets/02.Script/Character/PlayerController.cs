@@ -1,94 +1,93 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.TextCore;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed;
-    public LayerMask solidObjectsLayer;
-    public LayerMask interactableObjectsLayer;
+    [SerializeField] string playerName;
+    [SerializeField] Sprite sprite;
 
-    private bool isMoving;
+    public event Action OnEncountered;
+    public event Action<Collider2D> OnEnterTrainersView;
+
     private Vector2 input;
 
-    private CharacterAnimator animator;
-
+    private Character character;
     private void Awake()
     {
-        animator = GetComponent<CharacterAnimator>();
+        character = GetComponent<Character>();
     }
 
-    // Update is called once per frame
     public void HandleUpdate()
     {
-        if (!isMoving)
+        if (!character.IsMoving)
         {
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
 
+            // remove diagonal movement
             if (input.x != 0) input.y = 0;
 
             if (input != Vector2.zero)
             {
-                animator.MoveX = input.x;
-                animator.MoveY = input.y;
-
-                var targetPos = transform.position;
-                targetPos.x += input.x;
-                targetPos.y += input.y;
-
-                if (IsWalkable(targetPos))
-                    StartCoroutine(Move(targetPos));
-                
+                StartCoroutine(character.Move(input, OnMoveOver));
             }
         }
 
-        animator.IsMoving = isMoving;
-            
+        character.HandleUpdate();
+
         if (Input.GetKeyDown(KeyCode.Z))
             Interact();
     }
 
     void Interact()
     {
-        var facingDirection = new Vector3(animator.MoveX, animator.MoveY);
-        var interactPos = transform.position + facingDirection;
+        var facingDir = new Vector3(character.Animator.MoveX, character.Animator.MoveY);
+        var interactPos = transform.position + facingDir;
 
-        var collider = Physics2D.OverlapCircle(interactPos, 0.3f, interactableObjectsLayer);
-        if(collider != null)
+        // Debug.DrawLine(transform.position, interactPos, Color.green, 0.5f);
+
+        var collider = Physics2D.OverlapCircle(interactPos, 0.3f, GameLayers.i.InteractableLayer);
+        if (collider != null)
         {
-            collider.GetComponent<Interactable>()?.Interact();
+            collider.GetComponent<Interactable>()?.Interact(transform);
         }
-
     }
 
-    IEnumerator Move(Vector3 targetPos)
+    private void OnMoveOver()
     {
-        Debug.Log(isMoving);
-        isMoving = true;
-
-        while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
-        {
-            Debug.Log("While");
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
-            yield return null;
-        }
-        transform.position = targetPos;
-
-        Debug.Log(isMoving);
-
-        isMoving = false;
+        CheckForEncounters();
+        CheckIfInTrainersView();
     }
 
-    private bool IsWalkable(Vector3 targetPos)
+    private void CheckForEncounters()
     {
-        if (Physics2D.OverlapCircle(targetPos, 0.2f, solidObjectsLayer | interactableObjectsLayer) != null)
+        if (Physics2D.OverlapCircle(transform.position, 0.2f, GameLayers.i.GrassLayer) != null)
         {
-            return false;
+            if (UnityEngine.Random.Range(1, 101) <= 10)
+            {
+                character.Animator.IsMoving = false;
+                OnEncountered();
+            }
         }
+    }
 
-        return true;
+    private void CheckIfInTrainersView()
+    {
+        var collider = Physics2D.OverlapCircle(transform.position, 0.2f, GameLayers.i.FovLayer);
+        if (collider != null)
+        {
+            character.Animator.IsMoving = false;
+            OnEnterTrainersView?.Invoke(collider);
+        }
+    }
+
+    public string Name {
+        get => playerName;
+    }
+
+    public Sprite Sprite {
+        get => sprite;
     }
 }
