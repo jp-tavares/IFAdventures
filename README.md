@@ -15,5 +15,5 @@ Este projeto foi desenvolvido como trabalho de conclusão de curso no âmbito do
 - Eduarda Vitória C. Matias, 
 - Giuliana Ferreira Chantal
 - João Paulo Tavares da Silva 
-- Matheus Henrique Palinkas dos Santos - 
+- Matheus Henrique Palinkas dos Santos
 - Stefany Tam Pereira Mendes 
