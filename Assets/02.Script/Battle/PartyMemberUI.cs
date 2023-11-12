@@ -11,16 +11,16 @@ public class PartyMemberUI : MonoBehaviour
 
     [SerializeField] Color highlightedColor;
 
-    Pokemon _pokemon;
+    Pergunta _pokemon;
 
-    public void SetData(Pokemon pokemon)
-    {
-        _pokemon = pokemon;
+    //public void SetData(Pokemon pokemon)
+    //{
+    //    _pokemon = pokemon;
 
-        nameText.text = pokemon.Base.Name;
-        levelText.text = "Lvl " + pokemon.Level;
-        hpBar.SetHP((float)pokemon.HP / pokemon.MaxHp);
-    }
+    //    nameText.text = pokemon.Base.Name;
+    //    levelText.text = "Lvl " + pokemon.Level;
+    //    hpBar.SetHP((float)pokemon.HP / pokemon.MaxHp);
+    //}
 
     public void SetSelected(bool selected)
     {

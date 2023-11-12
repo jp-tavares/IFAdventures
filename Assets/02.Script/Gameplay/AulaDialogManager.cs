@@ -1,19 +1,21 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogManager : MonoBehaviour
+public class AulaDialogManager : MonoBehaviour
 {
-    [SerializeField] GameObject dialogBox;
-    [SerializeField] Text dialogText;
+    [SerializeField] GameObject dialogBoxPref;
     [SerializeField] int lettersPerSecond;
 
+    Text dialogText;
+    GameObject dialogBox;
     public event Action OnShowDialog;
     public event Action OnCloseDialog;
 
-    public static DialogManager Instance { get; private set; }
+    public static AulaDialogManager Instance { get; private set; }
     private void Awake()
     {
         Instance = this;
@@ -37,7 +39,9 @@ public class DialogManager : MonoBehaviour
         this.dialog = dialog;
         onDialogFinished = onFinished;
 
-        dialogBox.SetActive(true);
+        dialogBox = Instantiate(dialogBoxPref, new Vector3(0,0,0), Quaternion.identity);
+        dialogBox.transform.SetParent(transform.parent, false);
+        dialogText = dialogBox.GetComponentInChildren<Text>();
         StartCoroutine(TypeDialog(dialog.Lines[0]));
     }
 
@@ -50,6 +54,9 @@ public class DialogManager : MonoBehaviour
                 ++currentLine;
                 if (currentLine < dialog.Lines.Count)
                 {
+                    dialogBox = Instantiate(dialogBoxPref, new Vector3(0, 0, 0), Quaternion.identity);
+                    dialogBox.transform.SetParent(transform.parent, false);
+                    dialogText = dialogBox.GetComponentInChildren<Text>();
                     StartCoroutine(TypeDialog(dialog.Lines[currentLine]));
                 }
                 else
@@ -82,4 +89,5 @@ public class DialogManager : MonoBehaviour
         }
         isTyping = false;
     }
+
 }

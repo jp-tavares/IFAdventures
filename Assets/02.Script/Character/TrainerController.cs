@@ -6,8 +6,9 @@ public class TrainerController : MonoBehaviour, Interactable
 {
     [SerializeField] string trainerName;
     [SerializeField] Sprite sprite;
-    [SerializeField] Dialog dialog;
-    [SerializeField] Dialog dialogAfterBattle;
+    [SerializeField] Dialog falasAntesDaInteracao;
+    [SerializeField] Dialog falasDuranteInteracao;
+    [SerializeField] Dialog falasDepoisDaInteracao;
     [SerializeField] GameObject exclamation;
     [SerializeField] GameObject fov;
 
@@ -36,20 +37,22 @@ public class TrainerController : MonoBehaviour, Interactable
 
         if (!battleLost)
         {
-            StartCoroutine(DialogManager.Instance.ShowDialog(dialog, () =>
+            StartCoroutine(DialogManager.Instance.ShowDialog(falasAntesDaInteracao, () =>
             {
                 GameController.Instance.StartTrainerBattle(this);
             }));
         }
         else
         {
-            StartCoroutine(DialogManager.Instance.ShowDialog(dialogAfterBattle));
+            StartCoroutine(DialogManager.Instance.ShowDialog(falasDepoisDaInteracao));
         }
         
     }
 
     public IEnumerator TriggerTrainerBattle(PlayerController player)
     {
+        Debug.Log("TriggerTrainerBattle");
+
         // Show Exclamation
         exclamation.SetActive(true);
         yield return new WaitForSeconds(0.8f);
@@ -63,7 +66,7 @@ public class TrainerController : MonoBehaviour, Interactable
         yield return character.Move(moveVec);
 
         // Show dialog
-        StartCoroutine(DialogManager.Instance.ShowDialog(dialog, () =>
+        StartCoroutine(DialogManager.Instance.ShowDialog(falasAntesDaInteracao, () =>
         {
             GameController.Instance.StartTrainerBattle(this);
         }));
@@ -94,5 +97,10 @@ public class TrainerController : MonoBehaviour, Interactable
 
     public Sprite Sprite {
         get => sprite;
+    }
+
+    public Dialog FalasDuranteInteracao
+    {
+        get => falasDuranteInteracao;
     }
 }

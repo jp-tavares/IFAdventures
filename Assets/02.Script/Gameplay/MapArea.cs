@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MapArea : MonoBehaviour
 {
-    [SerializeField] List<Pokemon> wildPokemons;
+    [SerializeField] List<Pergunta> wildPokemons;
 
-    public Pokemon GetRandomWildPokemon()
+    public Pergunta GetRandomWildPokemon()
     {
         var wildPokemon = wildPokemons[Random.Range(0, wildPokemons.Count)];
-        wildPokemon.Init();
+        //wildPokemon.Init();
         return wildPokemon;
     }
 }

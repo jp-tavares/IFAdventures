@@ -17,7 +17,7 @@ public class BattleUnit : MonoBehaviour
         get { return hud;  }
     }
 
-    public Pokemon Pokemon { get; set; }
+    public Pergunta Pergunta { get; set; }
 
     Image image;
     Vector3 orginalPos;
@@ -29,16 +29,12 @@ public class BattleUnit : MonoBehaviour
         originalColor = image.color;
     }
 
-    public void Setup(Pokemon pokemon)
+    public void Setup(Pergunta pergunta)
     {
-        Pokemon = pokemon;
-        if (isPlayerUnit)
-            image.sprite = Pokemon.Base.BackSprite;
-        else
-            image.sprite = Pokemon.Base.FrontSprite;
+        Pergunta = pergunta;
 
         hud.gameObject.SetActive(true);
-        hud.SetData(pokemon);
+        hud.SetData(pergunta);
 
         image.color = originalColor;
         PlayEnterAnimation();

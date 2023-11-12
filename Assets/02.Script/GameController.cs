@@ -52,7 +52,7 @@ public class GameController : MonoBehaviour
         battleSystem.gameObject.SetActive(true);
         worldCamera.gameObject.SetActive(false);
 
-        var playerParty = playerController.GetComponent<PokemonParty>();
+        var playerParty = playerController.GetComponent<ListaPerguntas>();
         var wildPokemon = FindObjectOfType<MapArea>().GetComponent<MapArea>().GetRandomWildPokemon();
 
         battleSystem.StartBattle(playerParty, wildPokemon);
@@ -61,15 +61,18 @@ public class GameController : MonoBehaviour
     TrainerController trainer;
     public void StartTrainerBattle(TrainerController trainer)
     {
+        Debug.Log("StartTrainerBattle");
+
         state = GameState.Battle;
         battleSystem.gameObject.SetActive(true);
         worldCamera.gameObject.SetActive(false);
 
         this.trainer = trainer;
-        var playerParty = playerController.GetComponent<PokemonParty>();
-        var trainerParty = trainer.GetComponent<PokemonParty>();
+        var playerParty = playerController.GetComponent<ListaPerguntas>();
+        var falasProfessor = trainer.GetComponent<TrainerController>().FalasDuranteInteracao;
+        var trainerParty = trainer.GetComponent<ListaPerguntas>();
 
-        battleSystem.StartTrainerBattle(playerParty, trainerParty);
+        battleSystem.StartTrainerBattle(trainerParty, falasProfessor);
     }
 
     void EndBattle(bool won)
