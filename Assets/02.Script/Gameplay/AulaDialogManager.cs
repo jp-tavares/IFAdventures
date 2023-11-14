@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.UI;
 
 public class AulaDialogManager : MonoBehaviour
@@ -12,6 +14,9 @@ public class AulaDialogManager : MonoBehaviour
 
     Text dialogText;
     GameObject dialogBox;
+
+    List<GameObject> dialogBoxes = new List<GameObject>();
+
     public event Action OnShowDialog;
     public event Action OnCloseDialog;
 
@@ -40,6 +45,7 @@ public class AulaDialogManager : MonoBehaviour
         onDialogFinished = onFinished;
 
         dialogBox = Instantiate(dialogBoxPref, new Vector3(0,0,0), Quaternion.identity);
+        dialogBoxes.Add(dialogBox);
         dialogBox.transform.SetParent(transform.parent, false);
         dialogText = dialogBox.GetComponentInChildren<Text>();
         StartCoroutine(TypeDialog(dialog.Lines[0]));
@@ -55,6 +61,7 @@ public class AulaDialogManager : MonoBehaviour
                 if (currentLine < dialog.Lines.Count)
                 {
                     dialogBox = Instantiate(dialogBoxPref, new Vector3(0, 0, 0), Quaternion.identity);
+                    dialogBoxes.Add(dialogBox);
                     dialogBox.transform.SetParent(transform.parent, false);
                     dialogText = dialogBox.GetComponentInChildren<Text>();
                     StartCoroutine(TypeDialog(dialog.Lines[currentLine]));
@@ -63,6 +70,10 @@ public class AulaDialogManager : MonoBehaviour
                 {
                     currentLine = 0;
                     IsShowing = false;
+                    foreach(var dialogBox in dialogBoxes)
+                    {
+                        Destroy(dialogBox);
+                    }
                     dialogBox.SetActive(false);
                     onDialogFinished?.Invoke();
                     OnCloseDialog?.Invoke();
