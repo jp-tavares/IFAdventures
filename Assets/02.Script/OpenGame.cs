@@ -21,5 +21,11 @@ public class OpenGame : MonoBehaviour
             // Carrega a cena com o nome especificado
             SceneManager.LoadScene(nextScene);
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // Finaliza o jogo
+            Application.Quit();
+        }
     }
 }

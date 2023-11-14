@@ -509,7 +509,7 @@ Transform:
   m_GameObject: {fileID: 67101048}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.5, y: -7.8, z: 0}
+  m_LocalPosition: {x: -7.5, y: -14.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -682,8 +682,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 385.1397, y: -55.333332}
-  m_SizeDelta: {x: 746.2794, y: 86.666664}
+  m_AnchoredPosition: {x: 385.1397, y: -49.852592}
+  m_SizeDelta: {x: 746.2794, y: 75.705185}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &170410283
 MonoBehaviour:
@@ -706,11 +706,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 89d1ad35c2fe05147b7182d2496ca968, type: 3}
-    m_FontSize: 36
+    m_Font: {fileID: 12800000, guid: 18f74329614d3584182ef601565df606, type: 3}
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -45853,8 +45853,6 @@ MonoBehaviour:
   professorImage: {fileID: 0}
   DialogoUI: {fileID: 1527383357}
   AulaDialogManager: {fileID: 1367787818}
-  PerguntaUI: {fileID: 1497290587}
-  PerguntaManager: {fileID: 1497290591}
 --- !u!1 &802918347
 GameObject:
   m_ObjectHideFlags: 0
@@ -52547,7 +52545,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0.000010967, y: 85}
-  m_SizeDelta: {x: 770, y: 110.666664}
+  m_SizeDelta: {x: 770, y: 99.705185}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1122668818
 MonoBehaviour:
@@ -52569,7 +52567,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ad5e3b01f6331304d9f1fa80ed275bbe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ef457b60b3da291498675c0b819697ab, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -52677,14 +52675,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.74235207, b: 0.5424528, a: 1}
+  m_Color: {r: 0.28502136, g: 0.3301887, b: 0.29003996, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 5e20abdc84ca61d428ce5aac1cbdaa9f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -71208,7 +71206,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.11639404, y: -0.00012207031}
+  m_AnchoredPosition: {x: -0.11639404, y: 0.00030517578}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1527383359
@@ -71495,12 +71493,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7750a4327380b8b48b68e9f3b4d1050b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trainerName: Alberto
+  trainerName: Mentor
   sprite: {fileID: 213223808, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
   falasAntesDaInteracao:
     lines:
-    - 'Bem-vindo(a) ao emocionante universo de IF Adventures, jovem aventureiro(a)! '
-    - Vejo em seus olhos a chama da curiosidade e do aprendizado.
+    - "Ol\xE1, bem-vindo(a) ao emocionante universo de IF Adventures"
     - "Sou o Mentor, e estou aqui para gui\xE1-lo nessa jornada de conhecimento."
     - "Prepare-se para embarcar em uma jornada \xFAnica, onde suas escolhas e solu\xE7\xF5es
       depender\xE3o da sua perspic\xE1cia e racioc\xEDnio l\xF3gico."
@@ -71508,21 +71505,22 @@ MonoBehaviour:
     - "A l\xF3gica de programa\xE7\xE3o!"
   falasDuranteInteracao:
     lines:
-    - "A l\xF3gica de programa\xE7\xE3o \xE9 a habilidade de pensar de forma estruturada
-      e sequencial, como um quebra-cabe\xE7a de instru\xE7\xF5es, para resolver problemas
-      por meio de algoritmos."
-    - "Algoritmos s\xE3o sequ\xEAncias de passos bem definidos que levam \xE0 resolu\xE7\xE3o
-      de um problema."
+    - "Muito bem antes de seguirmos irei te explicar o que \xE9 l\xF3gica de programa\xE7\xE3o
+      e sua import\xE2ncia.  "
+    - "Podemos dizer que l\xF3gica de programa\xE7\xE3o \xE9 a habilidade de organizar
+      e estruturar ideias e comandos de forma sequencial e l\xF3gica, a fim de resolver
+      problemas e criar algoritmos. "
     - "Simplificando, imagine um bolo, para fazer o bolo \xE9 preciso seguir determinados
-      passos na ordem certa como:"
-    - Colocar os ingredientes na quantidade e ordem correta, misturar os ingredientes
-      e assar.
+      passos na ordem certa, como: colocar os ingredientes na quantidade e ordem
+      correta, misturar os ingredientes e assar. "
     - "A receita de bolo \xE9 um algoritmo, que ao final da sua execu\xE7\xE3o teremos
-      um delicioso bolo."
-    - "A l\xF3gica de programa\xE7\xE3o \xE9 a capacidade de criar algoritmos, por\xE9m
-      que ao final ao inv\xE9s de um bolo teremos um programa ou um software. "
-    - "Caso ainda tenha alguma d\xFAvida, separei alguns links sobre esse tema que
-      podem te ajudar. [Links de v\xEDdeos e artigos]. "
+      um delicioso bolo. A l\xF3gica de programa\xE7\xE3o \xE9 a capacidade de criar
+      algoritmos, por\xE9m no final, ao inv\xE9s de um bolo teremos um programa ou
+      um software. "
+    - "Caso ainda reste alguma d\xFAvida, separei alguns links sobre esse tema que
+      podem te ajudar:"
+    - "Bom, agora que voc\xEA j\xE1 sabe o que \xE9 l\xF3gica de programa\xE7\xE3o,
+      tenho seu primeiro desafio."
   falasDepoisDaInteracao:
     lines: []
   exclamation: {fileID: 1341758049}
@@ -71837,6 +71835,107 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913613885}
   m_CullTransparentMesh: 1
+--- !u!1001 &1916905464
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 79277854890777568, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79277854890777568, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79277854890777568, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79277854890777568, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79277854890777568, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79277854890777568, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79277854890777568, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79277854890777568, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79277854890777568, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79277854890777568, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79277854890777568, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79277854890777568, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 79277854890777568, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79277854890777568, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79277854890777568, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79277854890777568, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79277854890777568, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79277854890777568, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79277854890777568, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79277854890777568, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514482592873395862, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_Name
+      value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514482592873395862, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 50aefaf734076ed45a4ee4cd56ac1171, type: 3}
 --- !u!1 &2100569366
 GameObject:
   m_ObjectHideFlags: 0
@@ -71964,8 +72063,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 528517703}
   - {fileID: 67101051}
-  - {fileID: 1065002744}
   - {fileID: 469607366}
   - {fileID: 1729442793}
   - {fileID: 1473740211}
   - {fileID: 710209665}
+  - {fileID: 1916905464}
+  - {fileID: 1065002744}
