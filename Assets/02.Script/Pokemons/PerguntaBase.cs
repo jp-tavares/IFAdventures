@@ -31,14 +31,18 @@ public class PerguntaBase : ScriptableObject
 
     public Alternativa[] returnAlternativas()
     {
-        Alternativa[] alternativasReturn = default;
+        Alternativa[] alternativasReturn = new Alternativa[4];
 
         for (int i = 0; i < alternativas.Length; i++)
         {
             if (i == alternativaCorretaIndex)
+            {
                 alternativasReturn[i] = new Alternativa(alternativas[i], true);
+            }
             else
+            {
                 alternativasReturn[i] = new Alternativa(alternativas[i], false);
+            }
         }
 
         return alternativasReturn;

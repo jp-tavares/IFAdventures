@@ -7,7 +7,7 @@ public enum GameState { FreeRoam, Battle, Dialog, Cutscene }
 public class GameController : MonoBehaviour
 {
     [SerializeField] PlayerController playerController;
-    [SerializeField] BattleSystem battleSystem;
+    [SerializeField] SistemaDeInteracao sistemaInteracao;
     [SerializeField] Camera worldCamera;
 
     GameState state;
@@ -21,8 +21,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        playerController.OnEncountered += StartBattle;
-        battleSystem.OnBattleOver += EndBattle;
+        sistemaInteracao.OnBattleOver += EndBattle;
 
         playerController.OnEnterTrainersView += (Collider2D trainerCollider) =>
         {
@@ -46,17 +45,6 @@ public class GameController : MonoBehaviour
         };
     }
 
-    void StartBattle()
-    {
-        state = GameState.Battle;
-        battleSystem.gameObject.SetActive(true);
-        worldCamera.gameObject.SetActive(false);
-
-        var playerParty = playerController.GetComponent<ListaPerguntas>();
-        var wildPokemon = FindObjectOfType<MapArea>().GetComponent<MapArea>().GetRandomWildPokemon();
-
-        battleSystem.StartBattle(playerParty, wildPokemon);
-    }
 
     TrainerController trainer;
     public void StartTrainerBattle(TrainerController trainer)
@@ -64,7 +52,7 @@ public class GameController : MonoBehaviour
         Debug.Log("StartTrainerBattle");
 
         state = GameState.Battle;
-        battleSystem.gameObject.SetActive(true);
+        sistemaInteracao.gameObject.SetActive(true);
         worldCamera.gameObject.SetActive(false);
 
         this.trainer = trainer;
@@ -72,7 +60,7 @@ public class GameController : MonoBehaviour
         var falasProfessor = trainer.GetComponent<TrainerController>().FalasDuranteInteracao;
         var trainerParty = trainer.GetComponent<ListaPerguntas>();
 
-        battleSystem.StartTrainerBattle(trainerParty, falasProfessor);
+        sistemaInteracao.StartTrainerBattle(trainerParty, falasProfessor);
     }
 
     void EndBattle(bool won)
@@ -84,7 +72,7 @@ public class GameController : MonoBehaviour
         }
 
         state = GameState.FreeRoam;
-        battleSystem.gameObject.SetActive(false);
+        sistemaInteracao.gameObject.SetActive(false);
         worldCamera.gameObject.SetActive(true);
     }
 
@@ -96,7 +84,7 @@ public class GameController : MonoBehaviour
         }
         else if (state == GameState.Battle)
         {
-            battleSystem.HandleUpdate();
+            sistemaInteracao.HandleUpdate();
         }
         else if (state == GameState.Dialog)
         {
