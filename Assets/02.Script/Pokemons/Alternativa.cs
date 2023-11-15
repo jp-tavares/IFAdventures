@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Alternativa
 {
-    [SerializeField] string alternativa;
-    [SerializeField] bool isCorrect;
+    [SerializeField] public string alternativa;
+    [SerializeField] public bool isCorreta;
 
-    public Alternativa(string alternativa, bool isCorrect)
+    public Alternativa(string alternativa, bool isCorreta)
     {
         this.alternativa = alternativa;
-        this.isCorrect = isCorrect;
+        this.isCorreta = isCorreta;
     }
 }

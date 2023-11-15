@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] string playerName;
     [SerializeField] Sprite sprite;
 
-    public event Action OnEncountered;
     public event Action<Collider2D> OnEnterTrainersView;
 
     private Vector2 input;
@@ -57,20 +56,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnMoveOver()
     {
-        CheckForEncounters();
         CheckIfInTrainersView();
-    }
-
-    private void CheckForEncounters()
-    {
-        if (Physics2D.OverlapCircle(transform.position, 0.2f, GameLayers.i.GrassLayer) != null)
-        {
-            if (UnityEngine.Random.Range(1, 101) <= 10)
-            {
-                character.Animator.IsMoving = false;
-                OnEncountered();
-            }
-        }
     }
 
     private void CheckIfInTrainersView()

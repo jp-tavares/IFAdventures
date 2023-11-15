@@ -7,7 +7,7 @@ public class ListaPerguntas : MonoBehaviour
 {
     [SerializeField] List<Pergunta> perguntas;
 
-    public List<Pergunta> Pokemons {
+    public List<Pergunta> Perguntas {
         get {
             return perguntas;
         }
