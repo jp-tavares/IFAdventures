@@ -6,17 +6,9 @@ using UnityEngine.SceneManagement;
 public class MenuPause : MonoBehaviour
 {
     public GameObject PausePanel;
-    private const string HomeScene = "01.Scenes/01.Home";
-
     void Start()
     {
         this.Continue();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void Pause()
@@ -31,8 +23,13 @@ public class MenuPause : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void Creditos()
+    {
+        CreditosActions.OpenScene();
+    }
+
     public void ExitGame()
     {
-        SceneManager.LoadScene(HomeScene);
+        HomeActions.OpenScene();
     }
 }
