@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class MenuPause : MonoBehaviour
 {
     public GameObject PausePanel;
-    void Start()
-    {
-        this.Continue();
-    }
+    //void Start()
+    //{
+    //    this.Continue();
+    //}
 
     public void Pause()
     {

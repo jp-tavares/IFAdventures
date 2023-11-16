@@ -43,7 +43,7 @@ public class DialogManager : MonoBehaviour
 
     public void HandleUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Z) && !isTyping)
+        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space)) && !isTyping)
         {
             if (dialogText.text == dialog.Lines[currentLine])
             {
@@ -63,7 +63,7 @@ public class DialogManager : MonoBehaviour
             }
 
         }
-        else if (isTyping && Input.GetKeyDown(KeyCode.Z))
+        else if (isTyping && (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space)))
         {
             isTyping = false;
             StopAllCoroutines();

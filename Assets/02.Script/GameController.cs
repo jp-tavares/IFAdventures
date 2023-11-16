@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+
+        Time.timeScale = 1f;
         sistemaInteracao.OnBattleOver += EndBattle;
 
         playerController.OnEnterTrainersView += (Collider2D trainerCollider) =>

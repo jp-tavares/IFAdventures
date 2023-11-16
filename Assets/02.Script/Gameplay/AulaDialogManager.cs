@@ -53,7 +53,7 @@ public class AulaDialogManager : MonoBehaviour
 
     public void HandleUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Z) && !isTyping)
+        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space)) && !isTyping)
         {
             if (dialogText.text == dialog.Lines[currentLine])
             {
@@ -81,7 +81,7 @@ public class AulaDialogManager : MonoBehaviour
             }
 
         }
-        else if (isTyping && Input.GetKeyDown(KeyCode.Z))
+        else if (isTyping && (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space)))
         {
             isTyping = false;
             StopAllCoroutines();
