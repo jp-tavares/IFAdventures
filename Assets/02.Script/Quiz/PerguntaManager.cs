@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,8 +13,7 @@ public class PerguntaManager : MonoBehaviour
     [SerializeField] GameObject resposta3;
     [SerializeField] GameObject resposta4;
 
-    [SerializeField] GameObject RespostaCorretaPanel;
-    [SerializeField] GameObject RespostaErradaPanel;
+    [SerializeField] GameObject modalFeedbackPreFab;
 
     int indexPergunta;
 
@@ -22,7 +22,10 @@ public class PerguntaManager : MonoBehaviour
     ListaPerguntas listaPerguntas;
     private Action onPerguntasFineshed;
 
-
+    private void Start()
+    {
+        ModalFeedbackAction.setModalFeedback(modalFeedbackPreFab);
+    }
 
     public IEnumerator ShowQuestions(ListaPerguntas listaPerguntas, Action onFinished = null)
     {
@@ -45,23 +48,8 @@ public class PerguntaManager : MonoBehaviour
         resposta4.GetComponentInChildren<Text>().text = pergunta.Alternativas[3].alternativa;
     }
 
-    private void RespostaCorreta(Pergunta pergunta)
-    {
-        Debug.Log("Resposta Correta");
-        RespostaCorretaPanel.SetActive(true);
-        //pergunta.isRepondida = true;
-    }
-
-    private void RespostaErrada(Pergunta pergunta)
-    {
-        Debug.Log("Resposta Errada");
-        RespostaErradaPanel.SetActive(true);
-        //pergunta.isRepondida = false;
-    }
-
     public void CloseRespostaCorretaPanel()
     {
-        RespostaCorretaPanel.SetActive(false);
         IsShowing = false;
         if ((indexPergunta + 1) == listaPerguntas.Perguntas.Count)
         {
@@ -74,59 +62,41 @@ public class PerguntaManager : MonoBehaviour
         }
     }
 
-    public void CloseRespostaErradaPanel()
-    {
-        RespostaErradaPanel.SetActive(false);
-        IsShowing = false;
-    }
-
     public void Resposta1()
     {
-        if (listaPerguntas.Perguntas[indexPergunta].Alternativas[0].isCorreta)
-        {
-            RespostaCorreta(listaPerguntas.Perguntas[indexPergunta]);
-        }
-        else
-        {
-            RespostaErrada(listaPerguntas.Perguntas[indexPergunta]);
-        }
+        analisarResposta(0);
     }
 
     public void Resposta2()
     {
-        if (listaPerguntas.Perguntas[indexPergunta].Alternativas[1].isCorreta)
-        {
-            RespostaCorreta(listaPerguntas.Perguntas[indexPergunta]);
-        }
-        else
-        {
-            RespostaErrada(listaPerguntas.Perguntas[indexPergunta]);
-        }
+        analisarResposta(1);
     }
 
     public void Resposta3()
     {
-        if (listaPerguntas.Perguntas[indexPergunta].Alternativas[2].isCorreta)
-        {
-            RespostaCorreta(listaPerguntas.Perguntas[indexPergunta]);
-        }
-        else
-        {
-            RespostaErrada(listaPerguntas.Perguntas[indexPergunta]);
-        }
+        analisarResposta(2);
     }
 
     public void Resposta4()
     {
-        if (listaPerguntas.Perguntas[indexPergunta].Alternativas[3].isCorreta)
+        analisarResposta(3);
+    }
+
+    private void analisarResposta(int indice)
+    {
+        var pergunta = listaPerguntas.Perguntas[indexPergunta];
+        var alternativa = pergunta.Alternativas[indice];
+
+        if (alternativa.isCorreta)
         {
-            RespostaCorreta(listaPerguntas.Perguntas[indexPergunta]);
+            ModalFeedbackAction.OpenSuccessModal("Resposta correta, parabéns", alternativa.getFeedback(), CloseRespostaCorretaPanel);
         }
         else
         {
-            RespostaErrada(listaPerguntas.Perguntas[indexPergunta]);
+            ModalFeedbackAction.OpenErrorModal("Resposta errada, tente novamente!", alternativa.getFeedback(), () => { });
         }
-    }
 
+        pergunta.isRepondida = alternativa.isCorreta;
+    }
 
 }

@@ -38,6 +38,11 @@ public class SistemaDeInteracao : MonoBehaviour
     PlayerController player;
     TrainerController professor;
 
+    private void Start()
+    {
+        this.gameObject.SetActive(false);
+    }
+
     public void StartTrainerBattle(ListaPerguntas perguntasDoProfessor, Dialog falasDoProfessor)
     {
         this.perguntasDoProfessor = perguntasDoProfessor;

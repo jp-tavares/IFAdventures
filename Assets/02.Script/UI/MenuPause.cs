@@ -26,10 +26,12 @@ public class MenuPause : MonoBehaviour
     public void Creditos()
     {
         CreditosActions.OpenScene();
+        Time.timeScale = 0;
     }
 
     public void ExitGame()
     {
         HomeActions.OpenScene();
+        Time.timeScale = 0;
     }
 }

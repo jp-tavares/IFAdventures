@@ -22,3 +22,13 @@ MonoBehaviour:
   - "\xC9 a habilidade de organizar ideias de forma l\xF3gica para resolver problemas."
   - "\xC9 a habilidade de criar interfaces bonitas e intuitivas."
   alternativaCorretaIndex: 2
+  feedbackAlternativas:
+  - "Alternativa incorreta, apesar de ser uma \xF3tima habilidade fazer bolos, n\xE3o
+    tem rela\xE7\xE3o direta com l\xF3gica de programa\xE7\xE3o."
+  - "Alternativa incorreta, apesar da f\xF3rmula de Bhaskara ser muito importante
+    e muito utilizada ela n\xE3o tem rela\xE7\xE3o com l\xF3gica de programa\xE7\xE3o."
+  - "Correta. Parab\xE9ns \xE9 isso mesmo, l\xF3gica de programa\xE7\xE3o \xE9 a
+    habilidade organizar e estruturar ideias e comandos de forma sequencial e l\xF3gica,
+    a fim de resolver problemas e criar algoritmos. "
+  - "Apesar de ser muito importante, n\xE3o \xE9 a alternativa correta. Caso esteja
+    curioso sobre a compet\xEAncia que tem essa habilidade pesquise sobre UX/UI Design "

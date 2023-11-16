@@ -12,6 +12,7 @@ public class PerguntaBase : ScriptableObject
     [SerializeField] string[] alternativas;
 
     [SerializeField] int alternativaCorretaIndex;
+    [SerializeField] string[] feedbackAlternativas;
 
 
     public string Name
@@ -43,6 +44,7 @@ public class PerguntaBase : ScriptableObject
             {
                 alternativasReturn[i] = new Alternativa(alternativas[i], false);
             }
+            alternativasReturn[i].setFeedback(feedbackAlternativas[i]);
         }
 
         return alternativasReturn;
