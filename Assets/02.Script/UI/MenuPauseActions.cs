@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuPause : MonoBehaviour
+public class MenuPauseActions : MonoBehaviour
 {
     public GameObject PausePanel;
     //void Start()

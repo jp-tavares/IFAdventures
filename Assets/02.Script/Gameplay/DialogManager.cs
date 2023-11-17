@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets._02.Script.Utils;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,7 +44,7 @@ public class DialogManager : MonoBehaviour
 
     public void HandleUpdate()
     {
-        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space)) && !isTyping)
+        if (Controls.confirmAction() && !isTyping)
         {
             if (dialogText.text == dialog.Lines[currentLine])
             {
@@ -63,7 +64,7 @@ public class DialogManager : MonoBehaviour
             }
 
         }
-        else if (isTyping && (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space)))
+        else if (isTyping && Controls.confirmAction())
         {
             isTyping = false;
             StopAllCoroutines();

@@ -1,3 +1,4 @@
+using Assets._02.Script.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -53,7 +54,7 @@ public class AulaDialogManager : MonoBehaviour
 
     public void HandleUpdate()
     {
-        if ((Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space)) && !isTyping)
+        if (Controls.confirmAction() && !isTyping)
         {
             if (dialogText.text == dialog.Lines[currentLine])
             {
@@ -81,7 +82,7 @@ public class AulaDialogManager : MonoBehaviour
             }
 
         }
-        else if (isTyping && (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space)))
+        else if (isTyping && Controls.confirmAction())
         {
             isTyping = false;
             StopAllCoroutines();

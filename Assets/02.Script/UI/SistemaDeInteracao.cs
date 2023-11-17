@@ -1,24 +1,16 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public enum InteracaoState { Start, ActionSelection, MoveSelection, RunningTurn, Busy, PartyScreen, AboutToUse, InteracaoAcabou, Dilog, Question }
-public enum BattleAction { Move, SwitchPokemon, UseItem, Run }
 
 public class SistemaDeInteracao : MonoBehaviour
 {
-    [SerializeField] BattleUnit playerUnit;
-    [SerializeField] BattleUnit enemyUnit;
-    [SerializeField] BattleDialogBox dialogBox;
-    [SerializeField] PartyScreen partyScreen;
-    [SerializeField] Image playerImage;
-    [SerializeField] Image professorImage;
-
     [SerializeField] GameObject DialogoUI;
     [SerializeField] AulaDialogManager AulaDialogManager;
-    
+
     [SerializeField] GameObject PerguntaUI;
     [SerializeField] PerguntaManager AulaPerguntaManager;
 
@@ -59,12 +51,12 @@ public class SistemaDeInteracao : MonoBehaviour
         // Show Dialog UI
         isInDialogue = true;
         state = InteracaoState.Dilog;
-        DialogoUI.SetActive(true);        
+        DialogoUI.SetActive(true);
 
         // Start Dialog
-         return AulaDialogManager.Instance.ShowDialog(professor.FalasDuranteInteracao, () => { 
-             StartPergunta();
-         });
+        return AulaDialogManager.Instance.ShowDialog(professor.FalasDuranteInteracao, () => {
+            StartPergunta();
+        });
     }
 
     private void StartPergunta()
@@ -90,7 +82,7 @@ public class SistemaDeInteracao : MonoBehaviour
 
     internal void HandleUpdate()
     {
-        if(isInDialogue) 
+        if (isInDialogue)
             AulaDialogManager.HandleUpdate();
 
     }

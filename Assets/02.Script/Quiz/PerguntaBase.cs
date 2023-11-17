@@ -4,6 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Question", menuName = "Question/Create new question")]
 public class PerguntaBase : ScriptableObject
 {
+
+
     [SerializeField] string titulo;
 
     [TextArea]
@@ -13,6 +15,7 @@ public class PerguntaBase : ScriptableObject
 
     [SerializeField] int alternativaCorretaIndex;
     [SerializeField] string[] feedbackAlternativas;
+    [SerializeField] TipoPerguntaEnum tipoPergunta;
 
 
     public string Name
@@ -51,4 +54,10 @@ public class PerguntaBase : ScriptableObject
     }
 
 
+}
+
+public enum TipoPerguntaEnum
+{
+    ALTERNATIVAS = 0,
+    ARRASTAR = 1,
 }

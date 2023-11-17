@@ -7,7 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ModalFeedbackAction : MonoBehaviour
+public class ModalFeedbackActions : MonoBehaviour
 {
     private static GameObject modalFeedbackPreFab;
     private static Action onResposta;

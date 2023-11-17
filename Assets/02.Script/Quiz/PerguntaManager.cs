@@ -24,7 +24,7 @@ public class PerguntaManager : MonoBehaviour
 
     private void Start()
     {
-        ModalFeedbackAction.setModalFeedback(modalFeedbackPreFab);
+        ModalFeedbackActions.setModalFeedback(modalFeedbackPreFab);
     }
 
     public IEnumerator ShowQuestions(ListaPerguntas listaPerguntas, Action onFinished = null)
@@ -89,11 +89,11 @@ public class PerguntaManager : MonoBehaviour
 
         if (alternativa.isCorreta)
         {
-            ModalFeedbackAction.OpenSuccessModal("Resposta correta, parabéns", alternativa.getFeedback(), CloseRespostaCorretaPanel);
+            ModalFeedbackActions.OpenSuccessModal("Resposta correta, parabéns", alternativa.getFeedback(), CloseRespostaCorretaPanel);
         }
         else
         {
-            ModalFeedbackAction.OpenErrorModal("Resposta errada, tente novamente!", alternativa.getFeedback(), () => { });
+            ModalFeedbackActions.OpenErrorModal("Resposta errada, tente novamente!", alternativa.getFeedback(), () => { });
         }
 
         pergunta.isRepondida = alternativa.isCorreta;

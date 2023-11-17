@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets._02.Script.Utils;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,10 +37,7 @@ public class PlayerController : MonoBehaviour
 
         character.HandleUpdate();
 
-        if (Input.GetKeyDown(KeyCode.Z))
-            Interact();
-        
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(Controls.confirmAction())
             Interact();
     }
 
