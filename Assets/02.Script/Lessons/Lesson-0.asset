@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7923e1e5eed3cdc45bb16c0734ac8387, type: 3}
+  m_Name: Lesson-0
+  m_EditorClassIdentifier: 
+  falasAntesDaInteracao:
+    lines:
+    - text: "Ol\xE1, bem-vindo(a) ao emocionante universo de IF Adventures"
+      alignLeft: 0
+    - text: "Sou o Mentor, e estou aqui para gui\xE1-lo nessa jornada de conhecimento."
+      alignLeft: 0
+    - text: "Prepare-se para embarcar em uma jornada \xFAnica, onde suas escolhas
+        e solu\xE7\xF5es depender\xE3o da sua perspic\xE1cia e racioc\xEDnio l\xF3gico."
+      alignLeft: 0
+    - text: "Vamos falar sobre o conceito fundamental que permeia o mundo da programa\xE7\xE3o:"
+      alignLeft: 0
+    - text: "A l\xF3gica de programa\xE7\xE3o!"
+      alignLeft: 0
+  falasDuranteInteracao:
+    lines:
+    - text: "Muito bem antes de seguirmos irei te explicar o que \xE9 l\xF3gica de
+        programa\xE7\xE3o e sua import\xE2ncia.  "
+      alignLeft: 0
+    - text: "Podemos dizer que l\xF3gica de programa\xE7\xE3o \xE9 a habilidade de
+        organizar e estruturar ideias e comandos de forma sequencial e l\xF3gica,
+        a fim de resolver problemas e criar algoritmos. "
+      alignLeft: 0
+    - text: "Simplificando, imagine um bolo, para fazer o bolo \xE9 preciso seguir
+        determinados passos na ordem certa, como: colocar os ingredientes na quantidade
+        e ordem correta, misturar os ingredientes e assar. "
+      alignLeft: 0
+    - text: "A receita de bolo \xE9 um algoritmo, que ao final da sua execu\xE7\xE3o
+        teremos um delicioso bolo. A l\xF3gica de programa\xE7\xE3o \xE9 a capacidade
+        de criar algoritmos, por\xE9m no final, ao inv\xE9s de um bolo teremos um
+        programa ou um software. "
+      alignLeft: 0
+    - text: "Caso ainda reste alguma d\xFAvida, separei alguns links sobre esse tema
+        que podem te ajudar:"
+      alignLeft: 0
+    - text: Entendi
+      alignLeft: 1
+    - text: "Bom, agora que voc\xEA j\xE1 sabe o que \xE9 l\xF3gica de programa\xE7\xE3o,
+        tenho seu primeiro desafio."
+      alignLeft: 0
+  falasDepoisDaInteracao:
+    lines:
+    - text: "Parab\xE9ns por concluir seu primeiro desafio!"
+      alignLeft: 0
+    - text: Siga em frente para continuar sua aventura!
+      alignLeft: 0
+  perguntas:
+  - _base: {fileID: 11400000, guid: 54d66f9c8fb0daa47a33f7d3084c06cf, type: 2}
