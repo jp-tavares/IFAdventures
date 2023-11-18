@@ -7,6 +7,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 public class AulaDialogManager : MonoBehaviour
 {
@@ -45,33 +47,25 @@ public class AulaDialogManager : MonoBehaviour
         this.dialog = dialog;
         onDialogFinished = onFinished;
 
-        dialogBox = Instantiate(dialogBoxPref, new Vector3(0,0,0), Quaternion.identity);
-        dialogBoxes.Add(dialogBox);
-        dialogBox.transform.SetParent(transform.parent, false);
-        dialogText = dialogBox.GetComponentInChildren<Text>();
-        StartCoroutine(TypeDialog(dialog.Lines[0]));
+        createDialog(dialog.Lines[0]);
     }
 
     public void HandleUpdate()
     {
         if (Controls.confirmAction() && !isTyping)
         {
-            if (dialogText.text == dialog.Lines[currentLine])
+            if (dialogText.text == dialog.Lines[currentLine].Text)
             {
                 ++currentLine;
                 if (currentLine < dialog.Lines.Count)
                 {
-                    dialogBox = Instantiate(dialogBoxPref, new Vector3(0, 0, 0), Quaternion.identity);
-                    dialogBoxes.Add(dialogBox);
-                    dialogBox.transform.SetParent(transform.parent, false);
-                    dialogText = dialogBox.GetComponentInChildren<Text>();
-                    StartCoroutine(TypeDialog(dialog.Lines[currentLine]));
+                    createDialog(dialog.Lines[currentLine]);
                 }
                 else
                 {
                     currentLine = 0;
                     IsShowing = false;
-                    foreach(var dialogBox in dialogBoxes)
+                    foreach (var dialogBox in dialogBoxes)
                     {
                         Destroy(dialogBox);
                     }
@@ -86,15 +80,15 @@ public class AulaDialogManager : MonoBehaviour
         {
             isTyping = false;
             StopAllCoroutines();
-            dialogText.text = dialog.Lines[currentLine];
+            dialogText.text = dialog.Lines[currentLine].Text;
         }
     }
 
-    public IEnumerator TypeDialog(string line)
+    public IEnumerator TypeDialog(DialogLine line)
     {
         isTyping = true;
         dialogText.text = "";
-        foreach (var letter in line.ToCharArray())
+        foreach (var letter in line.Text.ToCharArray())
         {
             dialogText.text += letter;
             yield return new WaitForSeconds(1f / lettersPerSecond);
@@ -102,4 +96,32 @@ public class AulaDialogManager : MonoBehaviour
         isTyping = false;
     }
 
+    private void createDialog(DialogLine dialogLine)
+    {
+        var panel = createPanelAlign(dialogLine);
+
+        dialogBox = Instantiate(dialogBoxPref, new Vector3(0, 0, 0), Quaternion.identity);
+        dialogBox.transform.SetParent(panel.transform, false);
+        dialogText = dialogBox.GetComponentInChildren<Text>();
+        StartCoroutine(TypeDialog(dialog.Lines[currentLine]));
+    }
+
+    private GameObject createPanelAlign(DialogLine dialogLine)
+    {
+        var panel = new GameObject();
+        panel.name = "PanelDialog";
+
+        panel.AddComponent<LayoutElement>();
+
+        var horizontal = panel.AddComponent<HorizontalLayoutGroup>();
+        horizontal.childAlignment = dialogLine.AlignLeft ? TextAnchor.MiddleLeft : TextAnchor.MiddleRight;
+        horizontal.childForceExpandHeight = false;
+        horizontal.childForceExpandWidth = false;
+
+        dialogBoxes.Add(panel);
+
+        panel.transform.SetParent(transform.parent, false);
+
+        return panel;
+    }
 }

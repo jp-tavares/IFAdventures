@@ -6,16 +6,22 @@ public class TrainerController : MonoBehaviour, Interactable
 {
     [SerializeField] string trainerName;
     [SerializeField] Sprite sprite;
-    [SerializeField] Dialog falasAntesDaInteracao;
-    [SerializeField] Dialog falasDuranteInteracao;
-    [SerializeField] Dialog falasDepoisDaInteracao;
+    [SerializeField] Lesson lesson;
     [SerializeField] GameObject exclamation;
     [SerializeField] GameObject fov;
 
     // State
-    bool battleLost = false;
-
+    bool terminouInteracao = false;
     Character character;
+
+    // Props
+    public string Name { get => trainerName; }
+
+    public Sprite Sprite { get => sprite; }
+
+    public Lesson Lesson { get => lesson; }
+
+
     private void Awake()
     {
         character = GetComponent<Character>();
@@ -35,16 +41,16 @@ public class TrainerController : MonoBehaviour, Interactable
     {
         character.LookTowards(initiator.position);
 
-        if (!battleLost)
+        if (!terminouInteracao)
         {
-            StartCoroutine(DialogManager.Instance.ShowDialog(falasAntesDaInteracao, () =>
+            StartCoroutine(DialogManager.Instance.ShowDialog(lesson.FalasAntesDaInteracao, () =>
             {
                 GameController.Instance.StartTrainerBattle(this);
             }));
         }
         else
         {
-            StartCoroutine(DialogManager.Instance.ShowDialog(falasDepoisDaInteracao));
+            StartCoroutine(DialogManager.Instance.ShowDialog(lesson.FalasDepoisDaInteracao));
         }
         
     }
@@ -66,41 +72,25 @@ public class TrainerController : MonoBehaviour, Interactable
         yield return character.Move(moveVec);
 
         // Show dialog
-        StartCoroutine(DialogManager.Instance.ShowDialog(falasAntesDaInteracao, () =>
+        StartCoroutine(DialogManager.Instance.ShowDialog(lesson.FalasAntesDaInteracao, () =>
         {
             GameController.Instance.StartTrainerBattle(this);
         }));
     }
 
-    public void BattleLost()
+    public void TerminarLicao()
     {
-        battleLost = true;
+        terminouInteracao = true;
         fov.gameObject.SetActive(false);
     }
 
-    public void SetFovRotation(FacingDirection dir)
+    private void SetFovRotation(FacingDirection dir)
     {
         float angle = 0f;
-        if (dir == FacingDirection.Right)
-            angle = 90f;
-        else if (dir == FacingDirection.Up)
-            angle = 180f;
-        else if (dir == FacingDirection.Left)
-            angle = 270;
+        if (dir == FacingDirection.Right) angle = 90f;
+        else if (dir == FacingDirection.Up) angle = 180f;
+        else if (dir == FacingDirection.Left) angle = 270;
 
         fov.transform.eulerAngles = new Vector3(0f, 0f, angle);
-    }
-
-    public string Name {
-        get => trainerName;
-    }
-
-    public Sprite Sprite {
-        get => sprite;
-    }
-
-    public Dialog FalasDuranteInteracao
-    {
-        get => falasDuranteInteracao;
     }
 }

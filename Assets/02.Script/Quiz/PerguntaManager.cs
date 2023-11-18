@@ -19,7 +19,7 @@ public class PerguntaManager : MonoBehaviour
 
     bool IsShowing;
 
-    ListaPerguntas listaPerguntas;
+    List<Pergunta> Perguntas;
     private Action onPerguntasFineshed;
 
     private void Start()
@@ -27,14 +27,14 @@ public class PerguntaManager : MonoBehaviour
         ModalFeedbackActions.setModalFeedback(modalFeedbackPreFab);
     }
 
-    public IEnumerator ShowQuestions(ListaPerguntas listaPerguntas, Action onFinished = null)
+    public IEnumerator ShowQuestions(List<Pergunta> perguntas, Action onFinished = null)
     {
         IsShowing = true;
-        this.listaPerguntas = listaPerguntas;
+        Perguntas = perguntas;
         onPerguntasFineshed = onFinished;
 
         indexPergunta = 0;
-        HandlePergunta(listaPerguntas.Perguntas[indexPergunta]);
+        HandlePergunta(Perguntas[indexPergunta]);
 
         return null;
     }
@@ -51,14 +51,14 @@ public class PerguntaManager : MonoBehaviour
     public void CloseRespostaCorretaPanel()
     {
         IsShowing = false;
-        if ((indexPergunta + 1) == listaPerguntas.Perguntas.Count)
+        if ((indexPergunta + 1) == Perguntas.Count)
         {
             onPerguntasFineshed?.Invoke();
         }
         else
         {
             indexPergunta++;
-            HandlePergunta(listaPerguntas.Perguntas[indexPergunta]);
+            HandlePergunta(Perguntas[indexPergunta]);
         }
     }
 
@@ -84,7 +84,7 @@ public class PerguntaManager : MonoBehaviour
 
     private void analisarResposta(int indice)
     {
-        var pergunta = listaPerguntas.Perguntas[indexPergunta];
+        var pergunta = Perguntas[indexPergunta];
         var alternativa = pergunta.Alternativas[indice];
 
         if (alternativa.isCorreta)

@@ -46,7 +46,7 @@ public class DialogManager : MonoBehaviour
     {
         if (Controls.confirmAction() && !isTyping)
         {
-            if (dialogText.text == dialog.Lines[currentLine])
+            if (dialogText.text == dialog.Lines[currentLine].Text)
             {
                 ++currentLine;
                 if (currentLine < dialog.Lines.Count)
@@ -68,15 +68,15 @@ public class DialogManager : MonoBehaviour
         {
             isTyping = false;
             StopAllCoroutines();
-            dialogText.text = dialog.Lines[currentLine];
+            dialogText.text = dialog.Lines[currentLine].Text;
         }
     }
 
-    public IEnumerator TypeDialog(string line)
+    public IEnumerator TypeDialog(DialogLine line)
     {
         isTyping = true;
         dialogText.text = "";
-        foreach (var letter in line.ToCharArray())
+        foreach (var letter in line.Text.ToCharArray())
         {
             dialogText.text += letter;
             yield return new WaitForSeconds(1f / lettersPerSecond);

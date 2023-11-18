@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1947642093865379959}
   - component: {fileID: 322088112311217398}
+  - component: {fileID: 5320773038455854848}
   m_Layer: 12
   m_Name: Fov
   m_TagString: Untagged
@@ -17,14 +18,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1947642093865379959
-Transform:
+--- !u!224 &1947642093865379959
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385046979354476193}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,6 +32,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4488708576696030251}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &322088112311217398
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -77,6 +82,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 10}
   m_EdgeRadius: 0
+--- !u!222 &5320773038455854848
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385046979354476193}
+  m_CullTransparentMesh: 1
 --- !u!1 &2331124028526622367
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +189,6 @@ GameObject:
   - component: {fileID: 3969816917362313076}
   - component: {fileID: 8005828165435690389}
   - component: {fileID: 3961841031930307809}
-  - component: {fileID: 4085246722477421721}
   - component: {fileID: 956163858652591699}
   m_Layer: 9
   m_Name: NPC
@@ -386,52 +398,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainerName: Mentor
   sprite: {fileID: 213223808, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
-  falasAntesDaInteracao:
-    lines:
-    - "Ol\xE1, bem-vindo(a) ao emocionante universo de IF Adventures"
-    - "Sou o Mentor, e estou aqui para gui\xE1-lo nessa jornada de conhecimento."
-    - "Prepare-se para embarcar em uma jornada \xFAnica, onde suas escolhas e solu\xE7\xF5es
-      depender\xE3o da sua perspic\xE1cia e racioc\xEDnio l\xF3gico."
-    - "Vamos falar sobre o conceito fundamental que permeia o mundo da programa\xE7\xE3o:"
-    - "A l\xF3gica de programa\xE7\xE3o!"
-  falasDuranteInteracao:
-    lines:
-    - "Muito bem antes de seguirmos irei te explicar o que \xE9 l\xF3gica de programa\xE7\xE3o
-      e sua import\xE2ncia.  "
-    - "Podemos dizer que l\xF3gica de programa\xE7\xE3o \xE9 a habilidade de organizar
-      e estruturar ideias e comandos de forma sequencial e l\xF3gica, a fim de resolver
-      problemas e criar algoritmos. "
-    - "Simplificando, imagine um bolo, para fazer o bolo \xE9 preciso seguir determinados
-      passos na ordem certa, como: colocar os ingredientes na quantidade e ordem
-      correta, misturar os ingredientes e assar. "
-    - "A receita de bolo \xE9 um algoritmo, que ao final da sua execu\xE7\xE3o teremos
-      um delicioso bolo. A l\xF3gica de programa\xE7\xE3o \xE9 a capacidade de criar
-      algoritmos, por\xE9m no final, ao inv\xE9s de um bolo teremos um programa ou
-      um software. "
-    - "Caso ainda reste alguma d\xFAvida, separei alguns links sobre esse tema que
-      podem te ajudar:"
-    - "Bom, agora que voc\xEA j\xE1 sabe o que \xE9 l\xF3gica de programa\xE7\xE3o,
-      tenho seu primeiro desafio."
-  falasDepoisDaInteracao:
-    lines:
-    - "Parab\xE9ns por concluir seu primeiro desafio!"
-    - Siga em frente para continuar sua aventura!
+  lesson: {fileID: 11400000, guid: 6234798df5a55fc4282c60f43c67bf22, type: 2}
   exclamation: {fileID: 2331124028526622367}
   fov: {fileID: 1385046979354476193}
---- !u!114 &4085246722477421721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4873165081987508568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb82ecaf66894a34c8a8e8af7aa94309, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  perguntas:
-  - _base: {fileID: 11400000, guid: 54d66f9c8fb0daa47a33f7d3084c06cf, type: 2}
 --- !u!82 &956163858652591699
 AudioSource:
   m_ObjectHideFlags: 0

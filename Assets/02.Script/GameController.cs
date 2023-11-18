@@ -57,18 +57,17 @@ public class GameController : MonoBehaviour
         worldCamera.gameObject.SetActive(false);
 
         this.trainer = trainer;
-        var playerParty = playerController.GetComponent<ListaPerguntas>();
-        var falasProfessor = trainer.GetComponent<TrainerController>().FalasDuranteInteracao;
-        var trainerParty = trainer.GetComponent<ListaPerguntas>();
+        //var playerParty = playerController.GetComponent<ListaPerguntas>();
 
-        sistemaInteracao.StartTrainerBattle(trainerParty, falasProfessor);
+        var lesson = trainer.GetComponent<TrainerController>().Lesson;
+        sistemaInteracao.StartSistemaDeInteracao(lesson);
     }
 
     void EndBattle(bool won)
     {
         if (trainer != null && won == true)
         {
-            trainer.BattleLost();
+            trainer.TerminarLicao();
             trainer = null;
         }
 

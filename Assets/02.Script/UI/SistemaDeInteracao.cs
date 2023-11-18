@@ -24,23 +24,22 @@ public class SistemaDeInteracao : MonoBehaviour
 
     bool isInDialogue = false;
 
-    ListaPerguntas perguntasDoProfessor;
+    Dialog FalasDuranteInteracao;
+    List<Pergunta> Perguntas;
 
     bool isTrainerBattle = false;
-    PlayerController player;
-    TrainerController professor;
 
     private void Start()
     {
         this.gameObject.SetActive(false);
     }
 
-    public void StartTrainerBattle(ListaPerguntas perguntasDoProfessor, Dialog falasDoProfessor)
+    public void StartSistemaDeInteracao(Lesson lesson)
     {
-        this.perguntasDoProfessor = perguntasDoProfessor;
+        this.Perguntas = lesson.Perguntas;
+        this.FalasDuranteInteracao = lesson.FalasDuranteInteracao;
 
         isTrainerBattle = true;
-        professor = perguntasDoProfessor.GetComponent<TrainerController>();
 
         StartCoroutine(IniciaInteracao());
     }
@@ -54,7 +53,7 @@ public class SistemaDeInteracao : MonoBehaviour
         DialogoUI.SetActive(true);
 
         // Start Dialog
-        return AulaDialogManager.Instance.ShowDialog(professor.FalasDuranteInteracao, () => {
+        return AulaDialogManager.Instance.ShowDialog(FalasDuranteInteracao, () => {
             StartPergunta();
         });
     }
@@ -66,7 +65,7 @@ public class SistemaDeInteracao : MonoBehaviour
         isInDialogue = false;
         state = InteracaoState.Question;
         PerguntaUI.SetActive(true);
-        AulaPerguntaManager.ShowQuestions(perguntasDoProfessor, () =>
+        AulaPerguntaManager.ShowQuestions(Perguntas, () =>
         {
             Debug.Log("Pergunta Fineshed");
             PerguntaUI.SetActive(false);
