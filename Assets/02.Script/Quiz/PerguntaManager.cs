@@ -41,6 +41,7 @@ public class PerguntaManager : MonoBehaviour
 
     private void HandlePergunta(Pergunta pergunta)
     {
+        Debug.Log("HandlePergunta");
         caixaPergunta.GetComponentInChildren<Text>().text = pergunta.Enunciado;
         resposta1.GetComponentInChildren<Text>().text = pergunta.Alternativas[0].alternativa;
         resposta2.GetComponentInChildren<Text>().text = pergunta.Alternativas[1].alternativa;

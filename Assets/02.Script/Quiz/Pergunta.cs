@@ -1,44 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
-[System.Serializable]
-public class Pergunta
+[CreateAssetMenu(fileName = "Lesson", menuName = "Lesson/Create new question")]
+public class Pergunta : ScriptableObject
 {
-    [SerializeField] PerguntaBase _base;
+    [TextArea]
+    [SerializeField] string enunciado;
+    [SerializeField] TipoPerguntaEnum tipoPergunta;
 
-    public PerguntaBase Base
-    {
-        get
-        {
-            return _base;
-        }
-    }
+    [SerializeField] Alternativa[] alternativas;
+    [SerializeField] GruposItens[] gruposItens;
 
-    public string Titulo
-    {
-        get
-        {
-            return _base.Name;
-        }
-    }
-
-    public string Enunciado
-    {
-        get
-        {
-            return _base.Description;
-        }
-    }
-
-    public Alternativa[] Alternativas
-    {
-        get
-        {
-            return _base.Alternativas;
-        }
-    }
-
+    [HideInInspector]
     public bool isRepondida { get; set; }
 
+    public string Enunciado { get => enunciado; }
+
+    public Alternativa[] Alternativas { get => alternativas;}
+    public GruposItens[] GruposItens { get => gruposItens; }
 }
+
+
+

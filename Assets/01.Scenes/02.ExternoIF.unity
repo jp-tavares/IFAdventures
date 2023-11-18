@@ -51170,9 +51170,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6445327595980647214, guid: e7b13c9c82e8bfd499a8418efb7912e0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6445327595980647214, guid: e7b13c9c82e8bfd499a8418efb7912e0, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6445327595980647214, guid: e7b13c9c82e8bfd499a8418efb7912e0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6445327595980647214, guid: e7b13c9c82e8bfd499a8418efb7912e0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6445327595980647214, guid: e7b13c9c82e8bfd499a8418efb7912e0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6942504711214482422, guid: e7b13c9c82e8bfd499a8418efb7912e0, type: 3}
       propertyPath: m_Name
       value: SitemaDeInteracao
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280616006042094722, guid: e7b13c9c82e8bfd499a8418efb7912e0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

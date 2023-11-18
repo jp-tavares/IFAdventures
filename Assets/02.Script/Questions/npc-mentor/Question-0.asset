@@ -12,24 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5aa4a7f37a22714c9924381e9ade610, type: 3}
   m_Name: Question-0
   m_EditorClassIdentifier: 
-  titulo: 
   enunciado: "Qual das alternativas abaixo melhor se enquadra no conceito de l\xF3gica
     de programa\xE7\xE3o?"
-  alternativas:
-  - "\xC9 a habilidade de fazer deliciosos bolos."
-  - "\xC9 a habilidade de resolver problemas matem\xE1ticos usando a f\xF3rmula de
-    Bhaskara."
-  - "\xC9 a habilidade de organizar ideias de forma l\xF3gica para resolver problemas."
-  - "\xC9 a habilidade de criar interfaces bonitas e intuitivas."
-  alternativaCorretaIndex: 2
-  feedbackAlternativas:
-  - "Alternativa incorreta, apesar de ser uma \xF3tima habilidade fazer bolos, n\xE3o
-    tem rela\xE7\xE3o direta com l\xF3gica de programa\xE7\xE3o."
-  - "Alternativa incorreta, apesar da f\xF3rmula de Bhaskara ser muito importante
-    e muito utilizada ela n\xE3o tem rela\xE7\xE3o com l\xF3gica de programa\xE7\xE3o."
-  - "Correta. Parab\xE9ns \xE9 isso mesmo, l\xF3gica de programa\xE7\xE3o \xE9 a
-    habilidade organizar e estruturar ideias e comandos de forma sequencial e l\xF3gica,
-    a fim de resolver problemas e criar algoritmos. "
-  - "Apesar de ser muito importante, n\xE3o \xE9 a alternativa correta. Caso esteja
-    curioso sobre a compet\xEAncia que tem essa habilidade pesquise sobre UX/UI Design "
   tipoPergunta: 0
+  alternativas:
+  - alternativa: "\xC9 a habilidade de fazer deliciosos bolos."
+    feedback: "Alternativa incorreta, apesar de ser uma \xF3tima habilidade fazer
+      bolos, n\xE3o tem rela\xE7\xE3o direta com l\xF3gica de programa\xE7\xE3o. "
+    isCorreta: 0
+  - alternativa: "\xC9 a habilidade de resolver problemas matem\xE1ticos usando a
+      f\xF3rmula de Bhaskara. "
+    feedback: "Alternativa incorreta, apesar da f\xF3rmula de Bhaskara ser muito
+      importante e muito utilizada ela n\xE3o tem rela\xE7\xE3o com l\xF3gica de
+      programa\xE7\xE3o "
+    isCorreta: 0
+  - alternativa: "\xC9 a habilidade de organizar ideias de forma l\xF3gica para resolver
+      problemas "
+    feedback: "Correta. Parab\xE9ns \xE9 isso mesmo, l\xF3gica de programa\xE7\xE3o
+      \xE9 a habilidade organizar e estruturar ideias e comandos de forma sequencial
+      e l\xF3gica, a fim de resolver problemas e criar algoritmos."
+    isCorreta: 1
+  - alternativa: "\xC9 a habilidade de criar interfaces bonitas e intuitivas. "
+    feedback: "Apesar de ser muito importante, n\xE3o \xE9 a alternativa correta.
+      Caso esteja curioso sobre a compet\xEAncia que tem essa habilidade pesquise
+      sobre UX/UI Design"
+    isCorreta: 0
+  gruposItens:
+  - nomeGrupo: 
+    itens: []
