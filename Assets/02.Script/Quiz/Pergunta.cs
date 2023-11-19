@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -19,6 +20,20 @@ public class Pergunta : ScriptableObject
 
     public Alternativa[] Alternativas { get => alternativas;}
     public GruposItens[] GruposItens { get => gruposItens; }
+    public TipoPerguntaEnum Tipo { get => tipoPergunta; }
+
+
+    public List<string> getAllItensGrupo()
+    {
+        var itens = new List<string>();
+
+        foreach (var grupoItem in gruposItens)
+        {
+            itens.AddRange(grupoItem.itens);
+        }
+
+        return itens;
+    }
 }
 
 

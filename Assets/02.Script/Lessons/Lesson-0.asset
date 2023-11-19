@@ -58,4 +58,4 @@ MonoBehaviour:
     - text: Siga em frente para continuar sua aventura!
       alignLeft: 0
   perguntas:
-  - {fileID: 11400000, guid: 54d66f9c8fb0daa47a33f7d3084c06cf, type: 2}
+  - {fileID: 11400000, guid: 72508a50fe6e3e44bb3b91dc9de79302, type: 2}

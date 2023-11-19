@@ -12,7 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5aa4a7f37a22714c9924381e9ade610, type: 3}
   m_Name: Question-1.1
   m_EditorClassIdentifier: 
-  enunciado: 
+  enunciado: "Imagine um programa que recebe o nome, data de nascimento, altura e
+    peso de um aluno. E com base nestes dados calcula e retorna  a idade, IMC e o
+    nome abreviado do aluno.\r\n\nCom base no cen\xE1rio acima, separe os dados de
+    entrada e sa\xEDda de dados:\r\n"
   tipoPergunta: 1
   alternativas: []
-  gruposItens: []
+  gruposItens:
+  - nomeGrupo: Entrada de dados
+    itens:
+    - Data de nascimento
+    - Nome
+  - nomeGrupo: "Sa\xEDda de dados "
+    itens:
+    - Idade
+    - Nome abreviado

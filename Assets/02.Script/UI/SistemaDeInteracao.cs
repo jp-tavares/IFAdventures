@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +13,13 @@ public class SistemaDeInteracao : MonoBehaviour
     [SerializeField] AulaDialogManager AulaDialogManager;
 
     [SerializeField] GameObject PerguntaUI;
+
+    [SerializeField] GameObject AlternativasUI;
     [SerializeField] PerguntaManager AulaPerguntaManager;
+
+    [SerializeField] GameObject GrupoItensUI;
+    [SerializeField] GrupoItensManager GrupoItensManager;
+
 
     public event Action<bool> OnBattleOver;
 
@@ -65,12 +72,33 @@ public class SistemaDeInteracao : MonoBehaviour
         isInDialogue = false;
         state = InteracaoState.Question;
         PerguntaUI.SetActive(true);
-        AulaPerguntaManager.ShowQuestions(Perguntas, () =>
+
+        var pergunta = Perguntas.FirstOrDefault();
+        Debug.Log("Pergunta Tipo : " + pergunta.Tipo);
+
+        if (pergunta.Tipo == TipoPerguntaEnum.ALTERNATIVAS)
         {
-            Debug.Log("Pergunta Fineshed");
-            PerguntaUI.SetActive(false);
-            InteracaoAcabou(true);
-        });
+            AlternativasUI.SetActive(true);
+            AulaPerguntaManager.ShowQuestions(Perguntas, () =>
+            {
+                Debug.Log("Pergunta Fineshed");
+                AlternativasUI.SetActive(false);
+                PerguntaUI.SetActive(false);
+                InteracaoAcabou(true);
+            });
+        }
+
+        if (pergunta.Tipo == TipoPerguntaEnum.ARRASTAR)
+        {
+            GrupoItensUI.SetActive(true);
+            GrupoItensManager.ShowQuestions(Perguntas, () =>
+            {
+                Debug.Log("Pergunta Fineshed");
+                GrupoItensUI.SetActive(false);
+                PerguntaUI.SetActive(false);
+                InteracaoAcabou(true);
+            });
+        }
     }
 
     void InteracaoAcabou(bool won)

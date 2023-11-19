@@ -37,6 +37,4 @@ MonoBehaviour:
       Caso esteja curioso sobre a compet\xEAncia que tem essa habilidade pesquise
       sobre UX/UI Design"
     isCorreta: 0
-  gruposItens:
-  - nomeGrupo: 
-    itens: []
+  gruposItens: []
