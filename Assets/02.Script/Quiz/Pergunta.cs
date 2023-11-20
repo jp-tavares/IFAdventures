@@ -11,7 +11,8 @@ public class Pergunta : ScriptableObject
     [SerializeField] TipoPerguntaEnum tipoPergunta;
 
     [SerializeField] Alternativa[] alternativas;
-    [SerializeField] GruposItens[] gruposItens;
+    [SerializeField] GruposItens gruposItens;
+    [SerializeField] OrdenacaoItens ordenacaoItens;
 
     [HideInInspector]
     public bool isRepondida { get; set; }
@@ -19,21 +20,9 @@ public class Pergunta : ScriptableObject
     public string Enunciado { get => enunciado; }
 
     public Alternativa[] Alternativas { get => alternativas;}
-    public GruposItens[] GruposItens { get => gruposItens; }
+    public GruposItens GruposItens { get => gruposItens; }
+    public OrdenacaoItens OrdenacaoItens { get => ordenacaoItens; }
     public TipoPerguntaEnum Tipo { get => tipoPergunta; }
-
-
-    public List<string> getAllItensGrupo()
-    {
-        var itens = new List<string>();
-
-        foreach (var grupoItem in gruposItens)
-        {
-            itens.AddRange(grupoItem.itens);
-        }
-
-        return itens;
-    }
 }
 
 

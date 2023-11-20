@@ -36,7 +36,6 @@ public class GrupoItensManager : MonoBehaviour
 
     private void HandlePergunta(Pergunta pergunta)
     {
-        Debug.Log("pergunta enunciado: " + pergunta.Enunciado);
         caixaPergunta.GetComponentInChildren<Text>().text = pergunta.Enunciado;
     }
 

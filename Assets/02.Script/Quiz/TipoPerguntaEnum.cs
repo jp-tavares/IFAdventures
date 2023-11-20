@@ -7,4 +7,5 @@ public enum TipoPerguntaEnum
 {
     ALTERNATIVAS = 0,
     ARRASTAR = 1,
+    ORDENAR = 2,
 }

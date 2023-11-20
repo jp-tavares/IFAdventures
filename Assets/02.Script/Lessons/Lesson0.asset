@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7923e1e5eed3cdc45bb16c0734ac8387, type: 3}
-  m_Name: Lesson-0
+  m_Name: Lesson0
   m_EditorClassIdentifier: 
   falasAntesDaInteracao:
     lines:
@@ -58,4 +58,4 @@ MonoBehaviour:
     - text: Siga em frente para continuar sua aventura!
       alignLeft: 0
   perguntas:
-  - {fileID: 11400000, guid: 72508a50fe6e3e44bb3b91dc9de79302, type: 2}
+  - {fileID: 11400000, guid: c6078291c520fe843b4627278319ed02, type: 2}
