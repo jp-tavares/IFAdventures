@@ -25,8 +25,6 @@ public class GruposItens
         var lista = getAllItensGrupo();
         int qtdItens = lista.Count();
 
-        var order = new string[qtdItens];
-
         System.Random random = new System.Random();
 
         for (int i = qtdItens - 1; i > 0; i--)
@@ -38,7 +36,7 @@ public class GruposItens
             lista[indiceAleatorio] = temp;
         }
 
-        return order.ToList();
+        return lista.ToList();
     }
 
 }

@@ -91,7 +91,7 @@ public class SistemaDeInteracao : MonoBehaviour
         if (pergunta.Tipo == TipoPerguntaEnum.ARRASTAR)
         {
             GrupoItensUI.SetActive(true);
-            GrupoItensManager.ShowQuestions(Perguntas, () =>
+            GrupoItensManager.ShowQuestions(pergunta, () =>
             {
                 Debug.Log("Pergunta Fineshed");
                 GrupoItensUI.SetActive(false);
