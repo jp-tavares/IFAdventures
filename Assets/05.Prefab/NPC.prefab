@@ -364,25 +364,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkDownSprites:
-  - {fileID: 213223808, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
-  - {fileID: -373129961, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
-  - {fileID: 285544176, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
-  - {fileID: 1473825726, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
+  - {fileID: -784041603, guid: 0d6696b876c385944bdb4b30b46a1423, type: 3}
+  - {fileID: -1758270071, guid: 0d6696b876c385944bdb4b30b46a1423, type: 3}
+  - {fileID: 424610433, guid: 0d6696b876c385944bdb4b30b46a1423, type: 3}
+  - {fileID: 1237711567, guid: 0d6696b876c385944bdb4b30b46a1423, type: 3}
   walkUpSprites:
-  - {fileID: 427638871, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
-  - {fileID: -1518490849, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
-  - {fileID: -1197262830, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
-  - {fileID: -745600908, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
+  - {fileID: 337844548, guid: 0d6696b876c385944bdb4b30b46a1423, type: 3}
+  - {fileID: -1413052472, guid: 0d6696b876c385944bdb4b30b46a1423, type: 3}
+  - {fileID: -1515871822, guid: 0d6696b876c385944bdb4b30b46a1423, type: 3}
+  - {fileID: 1441826124, guid: 0d6696b876c385944bdb4b30b46a1423, type: 3}
   walkRightSprites:
-  - {fileID: -396617045, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
-  - {fileID: -1841257549, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
-  - {fileID: 1009949009, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
-  - {fileID: -1679845843, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
+  - {fileID: -1264258310, guid: 0d6696b876c385944bdb4b30b46a1423, type: 3}
+  - {fileID: 393289059, guid: 0d6696b876c385944bdb4b30b46a1423, type: 3}
+  - {fileID: -1728173786, guid: 0d6696b876c385944bdb4b30b46a1423, type: 3}
+  - {fileID: 2065298229, guid: 0d6696b876c385944bdb4b30b46a1423, type: 3}
   walkLeftSprites:
-  - {fileID: -1287794569, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
-  - {fileID: 118758050, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
-  - {fileID: -61804827, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
-  - {fileID: -151784571, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
+  - {fileID: -272388112, guid: 0d6696b876c385944bdb4b30b46a1423, type: 3}
+  - {fileID: 1265758722, guid: 0d6696b876c385944bdb4b30b46a1423, type: 3}
+  - {fileID: -1002072093, guid: 0d6696b876c385944bdb4b30b46a1423, type: 3}
+  - {fileID: 1293083953, guid: 0d6696b876c385944bdb4b30b46a1423, type: 3}
   defaultDirection: 2
 --- !u!114 &3961841031930307809
 MonoBehaviour:
@@ -398,7 +398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainerName: Mentor
   sprite: {fileID: 213223808, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
-  lesson: {fileID: 11400000, guid: 334d7422867c5474ca0c0751ee9740d2, type: 2}
+  lesson: {fileID: 11400000, guid: 88fb9ca93b747cc4b8579a4e7ef10216, type: 2}
   exclamation: {fileID: 2331124028526622367}
   fov: {fileID: 1385046979354476193}
 --- !u!82 &956163858652591699

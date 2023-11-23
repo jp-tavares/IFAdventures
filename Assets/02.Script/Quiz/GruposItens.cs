@@ -8,13 +8,15 @@ public class GruposItens
 {
     [SerializeField] GruposItem[] gruposItens;
 
+    public GruposItem[] ListGruposItens { get => gruposItens; } 
+
     public List<string> getAllItensGrupo()
     {
         var itens = new List<string>();
 
         foreach (var grupoItem in gruposItens)
         {
-            itens.AddRange(grupoItem.itens);
+            itens.AddRange(grupoItem.itens.Select(i => i.descricao));
         }
 
         return itens;
@@ -39,11 +41,43 @@ public class GruposItens
         return lista.ToList();
     }
 
+    public string getFeedback(string descricao)
+    {
+        var feedback = "";
+        foreach (var grupo in gruposItens)
+        {
+            feedback = grupo.Itens.FirstOrDefault(i => i.descricao == descricao)?.feedback ?? "";
+            if (!string.IsNullOrWhiteSpace(feedback)) return feedback;
+        }
+        return feedback;
+    }
+
 }
 
 [System.Serializable]
 public class GruposItem
 {
     [SerializeField] public string nomeGrupo;
-    [SerializeField] public List<string> itens;
+    [SerializeField] public List<Descricao> itens;
+
+    public string NomeGrupo { get => nomeGrupo;  }
+    public List<Descricao> Itens { get => itens;  }
+
+    public string getFeedback(string descricao)
+    {
+        return this.itens.FirstOrDefault(i => i.descricao == descricao)?.feedback;
+    }
+
+    public List<string> getDescricoes()
+    {
+        return this.itens.Select(i => i.descricao).ToList();
+    }
+}
+
+[System.Serializable]
+public class Descricao
+{
+    [SerializeField] public string descricao;
+    [SerializeField] public string feedback;
+
 }

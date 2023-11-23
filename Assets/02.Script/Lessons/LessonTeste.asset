@@ -25,4 +25,4 @@ MonoBehaviour:
     - text: oi
       alignLeft: 0
   perguntas:
-  - {fileID: 11400000, guid: c6078291c520fe843b4627278319ed02, type: 2}
+  - {fileID: 11400000, guid: d8776313adf15ad4e9e5dd02daddb55b, type: 2}

@@ -51434,6 +51434,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3047657998370186951, guid: e7b13c9c82e8bfd499a8418efb7912e0, type: 3}
+      propertyPath: Opcoes
+      value: 
+      objectReference: {fileID: 1518244446}
     - target: {fileID: 3136426070230560195, guid: e7b13c9c82e8bfd499a8418efb7912e0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -69749,6 +69753,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1518244446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8558636187639174579, guid: e7b13c9c82e8bfd499a8418efb7912e0, type: 3}
+  m_PrefabInstance: {fileID: 1277683873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1916905464
 PrefabInstance:
   m_ObjectHideFlags: 0
