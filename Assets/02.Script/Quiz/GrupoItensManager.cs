@@ -1,16 +1,11 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
-public class GrupoItensManager : MonoBehaviour
+public class GrupoItensManager : QuestionManagerBase
 {
-    [SerializeField] GameObject caixaPergunta;
-    [SerializeField] GameObject modalFeedbackPreFab;
 
     [SerializeField] GameObject itemDragPreFab;
     [SerializeField] GameObject draggblesArea;
@@ -21,20 +16,9 @@ public class GrupoItensManager : MonoBehaviour
 
     [SerializeField] GameObject Opcoes;
 
-    int indexPergunta;
-
-    bool IsShowing;
-
-    Pergunta Pergunta;
     GruposItens gruposItens { get => Pergunta?.GruposItens; }
     GruposItem[] listGruposItem { get => gruposItens?.ListGruposItens; }
 
-    private Action onPerguntasFineshed;
-
-    private void Start()
-    {
-        ModalFeedbackActions.setModalFeedback(modalFeedbackPreFab);
-    }
 
     private void Update()
     {
@@ -57,25 +41,10 @@ public class GrupoItensManager : MonoBehaviour
         }
     }
 
-    public IEnumerator ShowQuestions(Pergunta pergunta, Action onFinished = null)
+    public override void HandlerPergunta()
     {
-        IsShowing = true;
-        Pergunta = pergunta;
-        onPerguntasFineshed = onFinished;
-
-        indexPergunta = 0;
-
-        LoadPergunta(pergunta);
-
-        return null;
-    }
-
-    private void LoadPergunta(Pergunta pergunta)
-    {
-        caixaPergunta.GetComponentInChildren<Text>().text = pergunta.Enunciado;
-
-        LoadDraggableItems(pergunta.GruposItens);
-        LoadDropsAreas(pergunta.GruposItens);
+        LoadDraggableItems(Pergunta.GruposItens);
+        LoadDropsAreas(Pergunta.GruposItens);
     }
 
     private void LoadDropsAreas(GruposItens gruposItens)
@@ -84,7 +53,7 @@ public class GrupoItensManager : MonoBehaviour
 
         foreach (var drop in drops)
         {
-            GameObject itemDropPreFab = Instantiate(dropPreFab, new Vector3(0, 0, 1), Quaternion.identity);
+            GameObject itemDropPreFab = Instantiate(dropPreFab, new Vector3(0, 0, 0), Quaternion.identity);
             itemDropPreFab.transform.SetParent(dropAreas.transform, false);
             itemDropPreFab.GetComponentInChildren<Text>().text = drop.nomeGrupo;
         }
@@ -125,7 +94,8 @@ public class GrupoItensManager : MonoBehaviour
                                                 "Todos os itens estão corretos, parabéns",
                                                 () =>
                                                 {
-                                                    CloseRespostaCorretaPanel();
+                                                    Pergunta.RespondidaCorretamente();
+                                                    ClosePanel();
                                                 });
         }
     }
@@ -143,7 +113,6 @@ public class GrupoItensManager : MonoBehaviour
 
             if (!gruposItem.getDescricoes().Contains(descricaoItem))
             {
-                Debug.Log("gruposItem: " + string.Join(", ", gruposItem.getDescricoes()));
                 ModalFeedbackActions.OpenErrorModal($"Resposta errada, tente novamente!",
                                                     $"O item \"{descricaoItem}\" está no grupo errado\n " + gruposItens.getFeedback(descricaoItem),
                                                     () =>
@@ -157,9 +126,5 @@ public class GrupoItensManager : MonoBehaviour
         return true;
     }
 
-    public void CloseRespostaCorretaPanel()
-    {
-        IsShowing = false;
-        onPerguntasFineshed?.Invoke();
-    }
+
 }

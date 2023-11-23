@@ -15,7 +15,7 @@ public class Pergunta : ScriptableObject
     [SerializeField] OrdenacaoItens ordenacaoItens;
 
     [HideInInspector]
-    public bool isRepondida { get; set; }
+    public bool IsRepondida { get; private set; }
 
     public string Enunciado { get => enunciado; }
 
@@ -23,6 +23,12 @@ public class Pergunta : ScriptableObject
     public GruposItens GruposItens { get => gruposItens; }
     public OrdenacaoItens OrdenacaoItens { get => ordenacaoItens; }
     public TipoPerguntaEnum Tipo { get => tipoPergunta; }
+
+
+    public void RespondidaCorretamente()
+    {
+        IsRepondida = true;
+    }
 }
 
 

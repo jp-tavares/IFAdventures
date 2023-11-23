@@ -15,7 +15,7 @@ public class SistemaDeInteracao : MonoBehaviour
     [SerializeField] GameObject PerguntaUI;
 
     [SerializeField] GameObject AlternativasUI;
-    [SerializeField] PerguntaManager AulaPerguntaManager;
+    [SerializeField] AlternativasManager AulaPerguntaManager;
 
     [SerializeField] GameObject GrupoItensUI;
     [SerializeField] GrupoItensManager GrupoItensManager;
@@ -79,7 +79,7 @@ public class SistemaDeInteracao : MonoBehaviour
         if (pergunta.Tipo == TipoPerguntaEnum.ALTERNATIVAS)
         {
             AlternativasUI.SetActive(true);
-            AulaPerguntaManager.ShowQuestions(Perguntas, () =>
+            AulaPerguntaManager.ShowQuestions(pergunta, () =>
             {
                 Debug.Log("Pergunta Fineshed");
                 AlternativasUI.SetActive(false);
