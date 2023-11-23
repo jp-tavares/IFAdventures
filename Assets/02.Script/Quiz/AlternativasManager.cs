@@ -41,7 +41,7 @@ public class AlternativasManager : QuestionManagerBase
         AnalisarRespostas(3);
     }
 
-    private void AnalisarRespostas(int indice)
+    public void AnalisarRespostas(int indice)
     {
         var alternativa = Pergunta.Alternativas[indice];
 
@@ -54,5 +54,10 @@ public class AlternativasManager : QuestionManagerBase
         {
             ModalFeedbackActions.OpenErrorModal("Resposta errada, tente novamente!", alternativa.getFeedback(), () => { });
         }
+    }
+
+    public override void AnalisarRespostas()
+    {
+
     }
 }

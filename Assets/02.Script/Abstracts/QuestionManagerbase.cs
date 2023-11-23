@@ -22,6 +22,7 @@ public abstract class QuestionManagerBase : MonoBehaviour
     }
 
     public abstract void HandlerPergunta();
+    public abstract void AnalisarRespostas();
 
     public IEnumerator ShowQuestions(Pergunta pergunta, Action onFinished = null)
     {

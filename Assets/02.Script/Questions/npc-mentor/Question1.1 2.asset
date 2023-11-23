@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5aa4a7f37a22714c9924381e9ade610, type: 3}
+  m_Name: Question1.1 2
+  m_EditorClassIdentifier: 
+  enunciado: "magine um programa que recebe o nome, data de nascimento, altura e
+    peso de um aluno. E com base nestes dados calcula e retorna  a idade, IMC e o
+    nome abreviado do aluno.\r\n\r\nCom base no cen\xE1rio acima, separe os dados
+    de entrada e sa\xEDda de dados:\r\n"
+  tipoPergunta: 1
+  alternativas: []
+  gruposItens:
+    gruposItens:
+    - nomeGrupo: Entrada de dados
+      itens:
+      - descricao: Nome
+        feedback: "De acordo com o cenario nome \xE9 um dado de entrada de dados,
+          pois o programa ira receber e n\xE3o \"calcular\" esse dado."
+      - descricao: Data de nascimento
+        feedback: "De acordo com o cenario data de nascimento \xE9 um dado de entrada
+          de dados, pois o programa ira receber e n\xE3o \"calcular\" esse dado."
+    - nomeGrupo: "Sa\xEDda de dados "
+      itens:
+      - descricao: Idade
+        feedback: "A idade deve ser calculada com base na data de nascimento , logo
+          \xE9 um dado de saida de dados."
+  ordenacaoItens:
+    orderItens: []

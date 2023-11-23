@@ -75,7 +75,7 @@ public class GrupoItensManager : QuestionManagerBase
     }
 
 
-    private void AnalisarRespostas()
+    public override void AnalisarRespostas()
     {
         var gruposItens = Pergunta.GruposItens.ListGruposItens;
         var nomesGrupos = gruposItens.Select(i => i.nomeGrupo);

@@ -6,10 +6,8 @@ public class OrdenacaoItens
 {
     [SerializeField] OrdemItem[] orderItens;
 
-    public OrdemItem[] getItensEmbaralhados() {
+    public void embaralhar() {
         int qtdItens = orderItens.Count();
-
-        var order = new OrdemItem[qtdItens];
 
         System.Random random = new System.Random();
 
@@ -21,9 +19,15 @@ public class OrdenacaoItens
             orderItens[i] = orderItens[indiceAleatorio];
             orderItens[indiceAleatorio] = temp;
         }
-
-        return order;
     }
+
+    public string getFeedback(int ordem)
+    {
+        var item = orderItens.FirstOrDefault(o => o.Ordem == ordem);
+        return item.Feedback ?? "";
+    }
+
+    public OrdemItem[] OrderItens { get => orderItens; }
 }
 
 [System.Serializable]
@@ -31,4 +35,5 @@ public class OrdemItem
 {
     [SerializeField] public int Ordem;
     [SerializeField] public Sprite Image;
+    [SerializeField] public string Feedback;
 }

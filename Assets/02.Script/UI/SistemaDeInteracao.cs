@@ -21,6 +21,10 @@ public class SistemaDeInteracao : MonoBehaviour
     [SerializeField] GrupoItensManager GrupoItensManager;
 
 
+    [SerializeField] GameObject OrderItensUI;
+    [SerializeField] OrderItensManager OrderItensManager;
+
+
     public event Action<bool> OnBattleOver;
 
     InteracaoState state;
@@ -95,6 +99,18 @@ public class SistemaDeInteracao : MonoBehaviour
             {
                 Debug.Log("Pergunta Fineshed");
                 GrupoItensUI.SetActive(false);
+                PerguntaUI.SetActive(false);
+                InteracaoAcabou(true);
+            });
+        }
+
+        if (pergunta.Tipo == TipoPerguntaEnum.ORDENAR)
+        {
+            OrderItensUI.SetActive(true);
+            OrderItensManager.ShowQuestions(pergunta, () =>
+            {
+                Debug.Log("Pergunta Fineshed");
+                OrderItensUI.SetActive(false);
                 PerguntaUI.SetActive(false);
                 InteracaoAcabou(true);
             });
