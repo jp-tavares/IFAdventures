@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7923e1e5eed3cdc45bb16c0734ac8387, type: 3}
+  m_Name: Lesson1.2
+  m_EditorClassIdentifier: 
+  falasAntesDaInteracao:
+    lines:
+    - text: 'Salve mano, eu sou o Enzo. '
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "E voc\xEA deve ser o aluno novo, t\xF4 no ultimo ano e conhe\xE7o todo
+        mundo."
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "Mano vai ter um evento aqui no campus e a professora Matilda pediu para
+        eu montar um programa que vai gerenciar a entrada e sa\xEDda dos carros aqui
+        do estacionamento. "
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "Consegue me dar uma m\xE3o?"
+      image: {fileID: 0}
+      alignLeft: 0
+  falasDuranteInteracao:
+    lines:
+    - text: "Boa mano valeu mesmo pela for\xE7a."
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: Bem se quiser pode ir montando um fluxograma pra mim.
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "Fluxo....... o qu\xEA?"
+      image: {fileID: 0}
+      alignLeft: 1
+    - text: "Fluxograma, ainda n\xE3o teve essa aula com o marcos?"
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "Ainda n\xE3o, ele s\xF3 me falou de entrada e sa\xEDda de dados por
+        hora."
+      image: {fileID: 0}
+      alignLeft: 1
+    - text: "Entendi, mas pode ficar de boa que eu explico \xE9 de boa."
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "J\xE1 aprendeu sobre algortimos n\xE9?"
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "Sim, \xE9 um conjunto sequencial de instru\xE7\xF5es para resolver um
+        problema."
+      image: {fileID: 0}
+      alignLeft: 1
+    - text: Isso mesmo.
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "Bom, basicamente temos duas formas de representar um algoritmo sendo
+        elas fluxograma e o pseudoc\xF3digo. "
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "Vamos entender primeiro o fluxograma. Ele \xE9 uma forma gen\xE9rica
+        de escrever um algoritmo utilizando simbolos."
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "Ele \xE9 tipo um mapa que mostra o caminho que o programa vai seguir. "
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "Ah, saquei. \xC9 como um mapa de a\xE7\xF5es para o computador "
+      image: {fileID: 0}
+      alignLeft: 1
+    - text: "Exatamente, meu chapa! Pra ficar mais claro, pensa em um programa que
+        recebe um n\xFAmero e depois exibe para o usu\xE1rio. "
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "Primeiro a gente declara uma variavel, \xE9 uma boa pratica declarar
+        as variaveis  no inicio do algoritmo."
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "Depois disso iremos fazer a entrada do n\xFAmero e exibir o n\xFAmero. "
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "Ent\xE3o o fluxograma desse programa seria mais ou menos assim: "
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: 
+      image: {fileID: 21300000, guid: 82dff53831c973c41af63d846fa2279e, type: 3}
+      alignLeft: 0
+    - text: "Beleza, agora vou te mostrar os elementos b\xE1sicos de um fluxograma.
+        Pra come\xE7ar, sempre temos um in\xEDcio e um fim, que s\xE3o representados
+        por um ret\xE2ngulo com as bordas arredondadas."
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: 
+      image: {fileID: 21300000, guid: 8a4d1c532992d7c4b9cc3931263a204c, type: 3}
+      alignLeft: 0
+    - text: "Depois disso, a gente usa ret\xE2ngulos pra processar dados e declarar
+        vari\xE1veis. Olha s\xF3, aqui a gente t\xE1 declarando a vari\xE1vel \"numero\"."
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: 
+      image: {fileID: 21300000, guid: 4cfc785a410b911499755b4de093f153, type: 3}
+      alignLeft: 0
+    - text: "Pra entrada de dados, usamos um trap\xE9zio, que \xE9 onde o usu\xE1rio
+        vai entrar com o n\xFAmero. "
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: 
+      image: {fileID: 21300000, guid: ab351193a5b7105479c64635424f69c7, type: 3}
+      alignLeft: 0
+    - text: "Por fim, a pr\xF3xima figura \xE9 usada pra mostrar algo no dispositivo
+        padr\xE3o, que geralmente \xE9 o monitor. "
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: 
+      image: {fileID: 21300000, guid: 9725ee96d7ab2054c85bbf7e73107dee, type: 3}
+      alignLeft: 0
+    - text: " Maneiro, \xE9 como um mapa mental para o computador."
+      image: {fileID: 0}
+      alignLeft: 1
+    - text: 'Isso mesmo! O fluxograma ajuda a visualizar o roteiro do programa, especialmente
+        quando as coisas ficam mais complexas. '
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "Agora pra ver se voc\xEA entendeu, tenho um desafio sobre fluxograma"
+      image: {fileID: 0}
+      alignLeft: 0
+  falasDepoisDaInteracao:
+    lines:
+    - text: "Mandou bem no desafio, voc\xEA aprende rapido."
+      image: {fileID: 0}
+      alignLeft: 0
+  perguntas:
+  - {fileID: 11400000, guid: 439681e787fa5e1419c8b66f2344e064, type: 2}

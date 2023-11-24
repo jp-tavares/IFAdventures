@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7923e1e5eed3cdc45bb16c0734ac8387, type: 3}
+  m_Name: Lesson1,1
+  m_EditorClassIdentifier: 
+  falasAntesDaInteracao:
+    lines:
+    - text: "Preparado para mais uma explica\xE7\xE3o?"
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "Claro, vamos l\xE1"
+      image: {fileID: 0}
+      alignLeft: 1
+    - text: "Agora que voc\xEA j\xE1 entende o que \xE9 l\xF3gica de programa\xE7\xE3o,
+        vamos mergulhar no mundo da entrada e sa\xEDda de dados\u2026 "
+      image: {fileID: 0}
+      alignLeft: 0
+  falasDuranteInteracao:
+    lines:
+    - text: "Em programa\xE7\xE3o, a entrada de dados se refere \xE0 forma como o
+        programa recebe informa\xE7\xF5es do usu\xE1rio ou de outras fontes externas.
+        J\xE1 a sa\xEDda de dados \xE9 a maneira como o programa exibe ou apresenta
+        resultados ao usu\xE1rio. "
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "De forma pr\xE1tica imagine que quer fazer uma soma em uma calculadora,
+        para isso devemos digitar o primeiro n\xFAmero. Diga um 8  qualquer"
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: Hmmm... 8
+      image: {fileID: 0}
+      alignLeft: 1
+    - text: Bem agora outro numero.
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: 5
+      image: {fileID: 0}
+      alignLeft: 1
+    - text: "E prontinho, a calculadora realiza. Neste a soma do 8 mais 5 \xE9 13. "
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "Neste cen\xE1rio o 5 e o 8 s\xE3o dados de entrada de dados e o resultado
+        de sa\xEDda. "
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "Em programa\xE7\xE3o comumente nos referimos a entrada e sa\xEDda de
+        dados como input para entrada e output para sa\xEDda. "
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: 'Chegou a hora do seu desafio:  '
+      image: {fileID: 0}
+      alignLeft: 0
+  falasDepoisDaInteracao:
+    lines:
+    - text: Muito bem, espero que esta gostando de aprender.
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: Siga em frente acho que ouvi o Enzo, vai adorar conhece-lo
+      image: {fileID: 0}
+      alignLeft: 0
+  perguntas:
+  - {fileID: 11400000, guid: 8843f0c6bac977b4d80dec5ca9d72024, type: 2}

@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7923e1e5eed3cdc45bb16c0734ac8387, type: 3}
+  m_Name: Lesson0
+  m_EditorClassIdentifier: 
+  falasAntesDaInteracao:
+    lines:
+    - text: 'Bem-vindo(a) ao universo de IF Adventures! '
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: Sou o professor Marco Tuler, e estou aqui para guia-lo nessa jornada
+        de conhecimento
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "Prepare-se para embarcar em uma jornada \xFAnica, onde suas escolhas
+        e solu\xE7\xF5es depender\xE3o da sua perspic\xE1cia e racioc\xEDnio l\xF3gico."
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "Vamos falar sobre o conceito fundamental que permeia o mundo da programa\xE7\xE3o"
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "A l\xF3gica de programa\xE7\xE3o"
+      image: {fileID: 0}
+      alignLeft: 0
+  falasDuranteInteracao:
+    lines:
+    - text: "Muito bem antes de come\xE7armos irei te explicar o que \xE9 l\xF3gica
+        de programa\xE7\xE3o e sua import\xE2ncia.  "
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "Formalmente podemos dizer que l\xF3gica de programa\xE7\xE3o \xE9 a
+        habilidade de organizar e estruturar ideias e comandos de forma sequencial
+        e l\xF3gica, a fim de resolver problemas e criar algoritmos. "
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "Simplificando, imagine um bolo, para fazer o bolo \xE9 preciso seguir
+        determinados passos na ordem certa, como: colocar os ingredientes na quantidade
+        e ordem correta, misturar os ingredientes e assar."
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: " A receita de bolo \xE9 um algoritmo, que ao final da sua execu\xE7\xE3o
+        teremos um delicioso bolo. A l\xF3gica de programa\xE7\xE3o \xE9 a capacidade
+        de criar algoritmos, por\xE9m no final, ao inv\xE9s de um bolo teremos um
+        programa ou um software. "
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: "Bom, agora que voc\xEA j\xE1 sabe o que \xE9 l\xF3gica de programa\xE7\xE3o,
+        tenho seu primeiro desafio. "
+      image: {fileID: 0}
+      alignLeft: 0
+  falasDepoisDaInteracao:
+    lines:
+    - text: "Parab\xE9ns por concluir seu primeiro desafio"
+      image: {fileID: 0}
+      alignLeft: 0
+    - text: Siga em frente para continuar sua aventura!
+      image: {fileID: 0}
+      alignLeft: 0
+  perguntas:
+  - {fileID: 11400000, guid: c8a9fbbb110e8594aa80ac0d28977524, type: 2}
