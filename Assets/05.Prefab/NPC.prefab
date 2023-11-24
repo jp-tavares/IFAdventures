@@ -398,7 +398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trainerName: Mentor
   sprite: {fileID: -784041603, guid: 0d6696b876c385944bdb4b30b46a1423, type: 3}
-  lesson: {fileID: 11400000, guid: 88fb9ca93b747cc4b8579a4e7ef10216, type: 2}
+  lesson: {fileID: 11400000, guid: 16fbf3c8d9e47d042991b43b7731ae71, type: 2}
   exclamation: {fileID: 2331124028526622367}
   fov: {fileID: 1385046979354476193}
 --- !u!82 &956163858652591699
