@@ -17,10 +17,13 @@ public class Dialog
 public class DialogLine
 {
     [SerializeField] string text;
+    [SerializeField] Sprite image;
     [SerializeField] bool alignLeft = false;
 
 
     public string Text { get => text; }
 
     public bool AlignLeft { get => alignLeft; }
+    
+    public Sprite Image { get => image; }
 }
