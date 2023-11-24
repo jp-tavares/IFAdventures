@@ -65,9 +65,11 @@ public class TrainerController : MonoBehaviour, Interactable
         exclamation.SetActive(false);
 
         // Walk towards the player
-        var diff = player.transform.position - transform.position;
-        var moveVec = diff - diff.normalized;
+        Vector3 diff = player.transform.position - transform.position;
+        Vector3 moveVec = diff - diff.normalized;
         moveVec = new Vector2(Mathf.Round(moveVec.x), Mathf.Round(moveVec.y));
+
+        Debug.Log(moveVec);
 
         yield return character.Move(moveVec);
 

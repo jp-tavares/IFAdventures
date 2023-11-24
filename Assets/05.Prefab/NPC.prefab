@@ -69,7 +69,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -6}
+  m_Offset: {x: 0, y: -26}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -80,7 +80,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 10}
+  m_Size: {x: 0.6, y: 50}
   m_EdgeRadius: 0
 --- !u!222 &5320773038455854848
 CanvasRenderer:
@@ -160,8 +160,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -983186647
-  m_SortingLayer: 2
+  m_SortingLayerID: 609843047
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 213129215, guid: 836f3cfb9360ffc459b7597c793232f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -255,7 +255,7 @@ SpriteRenderer:
   m_SortingLayerID: -1035511155
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213223808, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
+  m_Sprite: {fileID: -784041603, guid: 0d6696b876c385944bdb4b30b46a1423, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -397,7 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trainerName: Mentor
-  sprite: {fileID: 213223808, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
+  sprite: {fileID: -784041603, guid: 0d6696b876c385944bdb4b30b46a1423, type: 3}
   lesson: {fileID: 11400000, guid: 88fb9ca93b747cc4b8579a4e7ef10216, type: 2}
   exclamation: {fileID: 2331124028526622367}
   fov: {fileID: 1385046979354476193}
