@@ -103,7 +103,16 @@ public class AulaDialogManager : MonoBehaviour
         dialogBox = Instantiate(dialogBoxPref, new Vector3(0, 0, 0), Quaternion.identity);
         dialogBox.transform.SetParent(panel.transform, false);
         dialogText = dialogBox.GetComponentInChildren<Text>();
-        StartCoroutine(TypeDialog(dialog.Lines[currentLine]));
+        if(dialogLine.Image == null) { 
+            StartCoroutine(TypeDialog(dialog.Lines[currentLine]));
+        }
+        else
+        {
+            dialogText.text = "";
+            dialogBox.GetComponentInChildren<HorizontalLayoutGroup>().childAlignment = TextAnchor.MiddleCenter;
+            var image = dialogBox.transform.GetChild(1).GetComponentInChildren<Image>();
+            image.sprite = dialogLine.Image;    
+        }
     }
 
     private GameObject createPanelAlign(DialogLine dialogLine)
