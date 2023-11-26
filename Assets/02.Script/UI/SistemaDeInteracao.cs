@@ -71,21 +71,18 @@ public class SistemaDeInteracao : MonoBehaviour
 
     private void StartPergunta()
     {
-        Debug.Log("Start Pergunta");
         // Show Pergunta UI
         isInDialogue = false;
         state = InteracaoState.Question;
         PerguntaUI.SetActive(true);
 
         var pergunta = Perguntas.FirstOrDefault();
-        Debug.Log("Pergunta Tipo : " + pergunta.Tipo);
 
         if (pergunta.Tipo == TipoPerguntaEnum.ALTERNATIVAS)
         {
             AlternativasUI.SetActive(true);
             AulaPerguntaManager.ShowQuestions(pergunta, () =>
             {
-                Debug.Log("Pergunta Fineshed");
                 AlternativasUI.SetActive(false);
                 PerguntaUI.SetActive(false);
                 InteracaoAcabou(true);
@@ -97,7 +94,6 @@ public class SistemaDeInteracao : MonoBehaviour
             GrupoItensUI.SetActive(true);
             GrupoItensManager.ShowQuestions(pergunta, () =>
             {
-                Debug.Log("Pergunta Fineshed");
                 GrupoItensUI.SetActive(false);
                 PerguntaUI.SetActive(false);
                 InteracaoAcabou(true);
@@ -109,7 +105,6 @@ public class SistemaDeInteracao : MonoBehaviour
             OrderItensUI.SetActive(true);
             OrderItensManager.ShowQuestions(pergunta, () =>
             {
-                Debug.Log("Pergunta Fineshed");
                 OrderItensUI.SetActive(false);
                 PerguntaUI.SetActive(false);
                 InteracaoAcabou(true);

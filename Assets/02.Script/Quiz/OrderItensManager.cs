@@ -70,8 +70,8 @@ public class OrderItensManager : QuestionManagerBase
 
         if (correto)
         {
-            ModalFeedbackActions.OpenSuccessModal($"Resposta correta, parabéns",
-                                                "Todos os itens estão em ordem, parabéns",
+            ModalFeedbackActions.OpenSuccessModal($"Resposta correta, parabÃ©ns",
+                                                "Todos os itens estÃ£o em ordem, parabÃ©ns",
                                                 () =>
                                                 {
                                                     Pergunta.RespondidaCorretamente();

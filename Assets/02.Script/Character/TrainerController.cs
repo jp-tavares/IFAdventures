@@ -11,7 +11,7 @@ public class TrainerController : MonoBehaviour, Interactable
     [SerializeField] GameObject fov;
 
     // State
-    bool terminouInteracao = false;
+    public bool terminouInteracao = false;
     Character character;
 
     // Props
@@ -57,8 +57,6 @@ public class TrainerController : MonoBehaviour, Interactable
 
     public IEnumerator TriggerTrainerBattle(PlayerController player)
     {
-        Debug.Log("TriggerTrainerBattle");
-
         // Show Exclamation
         exclamation.SetActive(true);
         yield return new WaitForSeconds(0.8f);
@@ -68,8 +66,6 @@ public class TrainerController : MonoBehaviour, Interactable
         Vector3 diff = player.transform.position - transform.position;
         Vector3 moveVec = diff - diff.normalized;
         moveVec = new Vector2(Mathf.Round(moveVec.x), Mathf.Round(moveVec.y));
-
-        Debug.Log(moveVec);
 
         yield return character.Move(moveVec);
 

@@ -30,8 +30,6 @@ public class Character : MonoBehaviour
         targetPos.x += moveVec.x;
         targetPos.y += moveVec.y;
 
-        Debug.Log(IsPathClear(targetPos));
-
         if (!IsPathClear(targetPos))
             yield break;
 
@@ -68,7 +66,7 @@ public class Character : MonoBehaviour
         var dir = diff.normalized;
 
 
-        if (Physics2D.BoxCast(transform.position + dir, new Vector2(0.2f, 0.2f), 0f, dir, diff.magnitude - 0.8f, GameLayers.i.SolidLayer | GameLayers.i.InteractableLayer | GameLayers.i.PlayerLayer) == true)
+        if (Physics2D.BoxCast(transform.position + dir, new Vector2(0.2f, 0.2f), 0f, dir, diff.magnitude - 1, GameLayers.i.SolidLayer | GameLayers.i.InteractableLayer | GameLayers.i.PlayerLayer) == true)
             return false;
 
         return true;

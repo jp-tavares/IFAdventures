@@ -20,7 +20,6 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (eventData.pointerDrag != null)
         {
             //GetComponent<Image>().sprite = ImageEnter;
-            Debug.Log("OnDrop");
             GameObject droppedObject = eventData.pointerDrag;
             DragDrop dragDrop = droppedObject.GetComponent<DragDrop>();
             dragDrop.parentAfterDrag = transform;

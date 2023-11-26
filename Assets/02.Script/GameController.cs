@@ -50,8 +50,6 @@ public class GameController : MonoBehaviour
     TrainerController trainer;
     public void StartTrainerBattle(TrainerController trainer)
     {
-        Debug.Log("StartTrainerBattle");
-
         state = GameState.Battle;
         sistemaInteracao.gameObject.SetActive(true);
         worldCamera.gameObject.SetActive(false);
@@ -65,15 +63,23 @@ public class GameController : MonoBehaviour
 
     void EndBattle(bool won)
     {
-        if (trainer != null && won == true)
-        {
-            trainer.TerminarLicao();
-            trainer = null;
-        }
-
         state = GameState.FreeRoam;
         sistemaInteracao.gameObject.SetActive(false);
         worldCamera.gameObject.SetActive(true);
+
+        Instance.StartCoroutine(finalPergunta());
+
+        IEnumerator finalPergunta()
+        {
+            yield return new WaitForEndOfFrame();
+
+            if (trainer != null && won == true)
+            {
+                trainer.TerminarLicao();
+                trainer = null;
+            }
+        }
+
     }
 
     private void Update()

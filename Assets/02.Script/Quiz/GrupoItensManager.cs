@@ -68,7 +68,6 @@ public class GrupoItensManager : QuestionManagerBase
         foreach (var item in itemsDrag)
         {
             GameObject itemPreFab = Instantiate(itemDragPreFab, new Vector3(0, 0, 0), Quaternion.identity);
-            Debug.Log(item);
             itemPreFab.transform.SetParent(draggblesArea.transform, false);
             itemPreFab.GetComponentInChildren<Text>().text = item;
         }
@@ -90,8 +89,8 @@ public class GrupoItensManager : QuestionManagerBase
 
         if (correto)
         {
-            ModalFeedbackActions.OpenSuccessModal($"Resposta correta, parabéns",
-                                                "Todos os itens estão corretos, parabéns",
+            ModalFeedbackActions.OpenSuccessModal($"Resposta correta, parabÃ©ns",
+                                                "Todos os itens estÃ£o corretos, parabÃ©ns",
                                                 () =>
                                                 {
                                                     Pergunta.RespondidaCorretamente();
@@ -114,7 +113,7 @@ public class GrupoItensManager : QuestionManagerBase
             if (!gruposItem.getDescricoes().Contains(descricaoItem))
             {
                 ModalFeedbackActions.OpenErrorModal($"Resposta errada, tente novamente!",
-                                                    $"O item \"{descricaoItem}\" está no grupo errado\n " + gruposItens.getFeedback(descricaoItem),
+                                                    $"O item \"{descricaoItem}\" estï¿½ no grupo errado\n " + gruposItens.getFeedback(descricaoItem),
                                                     () =>
                                                     {
                                                         item.transform.SetParent(Opcoes.transform, false);
