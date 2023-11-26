@@ -50,11 +50,11 @@ TagManager:
   - name: 2.Foreground
     uniqueID: 3311780649
     locked: 0
-  - name: 3.Player
-    uniqueID: 3259456141
-    locked: 0
   - name: 4.Solid
     uniqueID: 918717177
+    locked: 0
+  - name: 3.Player
+    uniqueID: 3259456141
     locked: 0
   - name: 5.Decoration
     uniqueID: 609843047
