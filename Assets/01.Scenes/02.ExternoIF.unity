@@ -51151,11 +51151,11 @@ PrefabInstance:
       objectReference: {fileID: 213223808, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
     - target: {fileID: 4488708576696030251, guid: 3234b8a45d20685489f97fe027eafcca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.5
+      value: 18.5
       objectReference: {fileID: 0}
     - target: {fileID: 4488708576696030251, guid: 3234b8a45d20685489f97fe027eafcca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.8
+      value: 7.8
       objectReference: {fileID: 0}
     - target: {fileID: 4488708576696030251, guid: 3234b8a45d20685489f97fe027eafcca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -51199,7 +51199,7 @@ PrefabInstance:
       objectReference: {fileID: 213223808, guid: 8b274727a2027a0489a659f9de96c0ba, type: 3}
     - target: {fileID: 8005828165435690389, guid: 3234b8a45d20685489f97fe027eafcca, type: 3}
       propertyPath: defaultDirection
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8005828165435690389, guid: 3234b8a45d20685489f97fe027eafcca, type: 3}
       propertyPath: walkUpSprites.Array.size
@@ -51298,6 +51298,10 @@ PrefabInstance:
       propertyPath: lesson
       value: 
       objectReference: {fileID: 11400000, guid: 2ef72e737ed0d5744a48cf1c9773f72e, type: 2}
+    - target: {fileID: 3961841031930307809, guid: 3234b8a45d20685489f97fe027eafcca, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4488708576696030251, guid: 3234b8a45d20685489f97fe027eafcca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5
@@ -51342,6 +51346,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC Mentor2
       objectReference: {fileID: 0}
+    - target: {fileID: 4873165081987508568, guid: 3234b8a45d20685489f97fe027eafcca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005828165435690389, guid: 3234b8a45d20685489f97fe027eafcca, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8005828165435690389, guid: 3234b8a45d20685489f97fe027eafcca, type: 3}
       propertyPath: defaultDirection
       value: 0
@@ -51363,13 +51375,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2407610977709198560, guid: 5494ae83fd24c974bbcffb35e6f8fdb9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7829446296278947400, guid: 5494ae83fd24c974bbcffb35e6f8fdb9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.5
+      value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 7829446296278947400, guid: 5494ae83fd24c974bbcffb35e6f8fdb9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.8
+      value: -13.8
       objectReference: {fileID: 0}
     - target: {fileID: 7829446296278947400, guid: 5494ae83fd24c974bbcffb35e6f8fdb9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -51550,6 +51566,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6445327595980647214, guid: e7b13c9c82e8bfd499a8418efb7912e0, type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6445327595980647214, guid: e7b13c9c82e8bfd499a8418efb7912e0, type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6445327595980647214, guid: e7b13c9c82e8bfd499a8418efb7912e0, type: 3}
@@ -69737,7 +69757,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1080, y: 720}
-  m_ScreenMatchMode: 1
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -70022,6 +70042,10 @@ PrefabInstance:
       propertyPath: lesson
       value: 
       objectReference: {fileID: 11400000, guid: 334d7422867c5474ca0c0751ee9740d2, type: 2}
+    - target: {fileID: 3961841031930307809, guid: 3234b8a45d20685489f97fe027eafcca, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4488708576696030251, guid: 3234b8a45d20685489f97fe027eafcca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.5
@@ -70065,6 +70089,14 @@ PrefabInstance:
     - target: {fileID: 4873165081987508568, guid: 3234b8a45d20685489f97fe027eafcca, type: 3}
       propertyPath: m_Name
       value: NPC Mentor1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873165081987508568, guid: 3234b8a45d20685489f97fe027eafcca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005828165435690389, guid: 3234b8a45d20685489f97fe027eafcca, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

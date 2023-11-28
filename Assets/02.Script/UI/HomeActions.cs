@@ -12,6 +12,7 @@ public class HomeActions : MonoBehaviour
 
     void Update()
     {
+
         if (Controls.confirmAction())
             OpenScene();
 

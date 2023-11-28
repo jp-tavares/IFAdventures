@@ -113,7 +113,7 @@ public class GrupoItensManager : QuestionManagerBase
             if (!gruposItem.getDescricoes().Contains(descricaoItem))
             {
                 ModalFeedbackActions.OpenErrorModal($"Resposta errada, tente novamente!",
-                                                    $"O item \"{descricaoItem}\" est� no grupo errado\n " + gruposItens.getFeedback(descricaoItem),
+                                                    $"O item \"{descricaoItem}\" está no grupo errado\n " + gruposItens.getFeedback(descricaoItem),
                                                     () =>
                                                     {
                                                         item.transform.SetParent(Opcoes.transform, false);

@@ -110,6 +110,7 @@ public class AulaDialogManager : MonoBehaviour
         {
             dialogText.text = "";
             dialogBox.GetComponentInChildren<HorizontalLayoutGroup>().childAlignment = TextAnchor.MiddleCenter;
+            dialogBox.GetComponentInChildren<HorizontalLayoutGroup>().childControlWidth = true;
             var image = dialogBox.transform.GetChild(1).GetComponentInChildren<Image>();
             image.sprite = dialogLine.Image;    
         }

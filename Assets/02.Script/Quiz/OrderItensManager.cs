@@ -18,7 +18,6 @@ public class OrderItensManager : QuestionManagerBase
 
     private void Update()
     {
-
         if (dropArea.transform.childCount == orderItens.Length)
         {
             AnalisarRespostas();
@@ -52,7 +51,7 @@ public class OrderItensManager : QuestionManagerBase
         {
             var item = dropArea.transform.GetChild(indice);
 
-            if(item.name != indice.ToString() && correto)
+            if (item.name != indice.ToString() && correto)
             {
                 ModalFeedbackActions.OpenErrorModal($"Resposta errada, tente novamente!",
                                                 ordemItem.getFeedback(indice),

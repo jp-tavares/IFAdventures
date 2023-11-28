@@ -17,9 +17,6 @@ MonoBehaviour:
     - text: "Preparado para mais uma explica\xE7\xE3o?"
       image: {fileID: 0}
       alignLeft: 0
-    - text: "Claro, vamos l\xE1"
-      image: {fileID: 0}
-      alignLeft: 1
     - text: "Agora que voc\xEA j\xE1 entende o que \xE9 l\xF3gica de programa\xE7\xE3o,
         vamos mergulhar no mundo da entrada e sa\xEDda de dados\u2026 "
       image: {fileID: 0}
@@ -45,7 +42,7 @@ MonoBehaviour:
     - text: 5
       image: {fileID: 0}
       alignLeft: 1
-    - text: "E prontinho, a calculadora realiza. Neste a soma do 8 mais 5 \xE9 13. "
+    - text: "E prontinho, fazendo a soma do 8 mais 5 d\xE1 13. "
       image: {fileID: 0}
       alignLeft: 0
     - text: "Neste cen\xE1rio o 5 e o 8 s\xE3o dados de entrada de dados e o resultado

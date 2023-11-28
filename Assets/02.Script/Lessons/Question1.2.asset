@@ -21,30 +21,27 @@ MonoBehaviour:
     gruposItens: []
   ordenacaoItens:
     orderItens:
-    - Ordem: 0
-      Image: {fileID: 21300000, guid: 1ff7d1a8d01a9e84b990ede6045d76b1, type: 3}
-      Feedback: "Um fluxograma deve sempre come\xE7ar com o \"inicio\"."
-    - Ordem: 1
-      Image: {fileID: 21300000, guid: ba5767117c5a0ed48b84f7e9354b0c8a, type: 3}
-      Feedback: "A declara\xE7\xE3o de variaveis deve sempre vir antes da utiliza\xE7\xE3o
-        das mesmas, e por boa pratica deve vir depois do inicio."
+    - Ordem: 6
+      Image: {fileID: 21300000, guid: 03951f407adec69449e80883a5218659, type: 3}
+      Feedback: O fluxograma sempre deve finalizar com o "fim".
     - Ordem: 2
       Image: {fileID: 21300000, guid: c42f45fae5a76314caf5c489e8b139f7, type: 3}
       Feedback: De acordo com o enunciado primeiro o programa deve receber o nome.
+    - Ordem: 5
+      Image: {fileID: 21300000, guid: 164cd818df4173a438929e3011efe3d6, type: 3}
+      Feedback: "O nome deve ser exibido ap\xF3s o sobrenome."
     - Ordem: 3
       Image: {fileID: 21300000, guid: 8e61a1384f18ede409d8aee6f1a7ad9a, type: 3}
       Feedback: "De acordo com o enunciado ap\xF3s o nome o programa deve receber
         o sobrenome."
+    - Ordem: 1
+      Image: {fileID: 21300000, guid: ba5767117c5a0ed48b84f7e9354b0c8a, type: 3}
+      Feedback: "A declara\xE7\xE3o de variaveis deve sempre vir antes da utiliza\xE7\xE3o
+        das mesmas, e por boa pratica deve vir depois do inicio."
+    - Ordem: 0
+      Image: {fileID: 21300000, guid: 1ff7d1a8d01a9e84b990ede6045d76b1, type: 3}
+      Feedback: "Um fluxograma deve sempre come\xE7ar com o \"inicio\"."
     - Ordem: 4
       Image: {fileID: 21300000, guid: 07bb1dca0eda1cd4da4b1bfd85adb051, type: 3}
       Feedback: "De acordo com o enunciado, ap\xF3s a digita\xE7\xE3o exibimos na
         ordem inversa, logo primeiro o sobrenome."
-    - Ordem: 5
-      Image: {fileID: 21300000, guid: 164cd818df4173a438929e3011efe3d6, type: 3}
-      Feedback: "O nome deve ser exibido ap\xF3s o sobrenome."
-    - Ordem: 6
-      Image: {fileID: 21300000, guid: 03951f407adec69449e80883a5218659, type: 3}
-      Feedback: O fluxograma sempre deve finalizar com o "fim".
-    - Ordem: 0
-      Image: {fileID: 0}
-      Feedback: 
